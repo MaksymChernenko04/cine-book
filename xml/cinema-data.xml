@@ -35,4 +35,73 @@
         </cd:Movie>
     </cd:Movies>
 
+    <cd:Screenings>
+        <cd:Screening id="101">
+            <cd:Movie id="1" ratingSource="IMDb">
+                <cd:Title>The Matrix</cd:Title>
+                <cd:Description>Neo discovers the truth about the reality.</cd:Description>
+                <cd:Genre>SCI_FI</cd:Genre>
+                <cd:DurationMinutes>136</cd:DurationMinutes>
+                <cd:Rating>8.7</cd:Rating>
+                <cd:ReleaseDate>1999-03-31</cd:ReleaseDate>
+                <cd:PosterURL>https://maksymchernenko.com/cine-book/posters/matrix.png</cd:PosterURL>
+            </cd:Movie>
+
+            <cd:StartTime>2025-10-01T18:30:00</cd:StartTime>
+
+            <cd:Hall>
+                <cd:Name>Main Hall</cd:Name>
+                <cd:Capacity>120</cd:Capacity>
+                <cd:Seats>
+                    <cd:Seat id="11">
+                        <cd:Row>1</cd:Row>
+                        <cd:Number>1</cd:Number>
+                        <cd:Type>REGULAR</cd:Type>
+                        <cd:Status>AVAILABLE</cd:Status>
+                    </cd:Seat>
+                    <cd:Seat id="12">
+                        <cd:Row>6</cd:Row>
+                        <cd:Number>2</cd:Number>
+                        <cd:Type>VIP</cd:Type>
+                        <cd:Status>LOCKED</cd:Status>
+                        <cd:LockToken>lock-xyz-123</cd:LockToken>
+                    </cd:Seat>
+                    <cd:Seat id="13">
+                        <cd:Row>3</cd:Row>
+                        <cd:Number>1</cd:Number>
+                        <cd:Type>REGULAR</cd:Type>
+                        <cd:Status>SOLD</cd:Status>
+                    </cd:Seat>
+                </cd:Seats>
+            </cd:Hall>
+        </cd:Screening>
+
+        <cd:Screening id="102">
+            <cd:Movie id="3" ratingSource="RottenTomatoes">
+                <cd:Title>Interstellar</cd:Title>
+                <cd:Description>Explorers travel through a wormhole in space.</cd:Description>
+                <cd:Genre>SCI_FI</cd:Genre>
+                <cd:DurationMinutes>169</cd:DurationMinutes>
+                <cd:Rating>8.6</cd:Rating>
+                <cd:ReleaseDate>2014-11-07</cd:ReleaseDate>
+                <cd:PosterURL>https://maksymchernenko.com/cine-book/posters/interstellar.jpeg</cd:PosterURL>
+            </cd:Movie>
+
+            <cd:StartTime>2025-10-01T15:00:00</cd:StartTime>
+
+            <cd:Hall accessibility="true">
+                <cd:Name>Small Hall</cd:Name>
+                <cd:Capacity>40</cd:Capacity>
+                <cd:Seats>
+                    <cd:Seat id="50">
+                        <cd:Row>1</cd:Row>
+                        <cd:Number>1</cd:Number>
+                        <cd:Type>ACCESSIBLE</cd:Type>
+                        <cd:Status>AVAILABLE</cd:Status>
+                    </cd:Seat>
+                </cd:Seats>
+            </cd:Hall>
+        </cd:Screening>
+    </cd:Screenings>
+
 </cd:CinemaData>

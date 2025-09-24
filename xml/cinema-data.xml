@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cd:CinemaData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:cd="http://maksymchernenko.com/cine-book"
+         xsi:schemaLocation="http://maksymchernenko.com/cine-book cinema-data.xsd">
+
+    <cd:Movies>
+        <cd:Movie id="1" ratingSource="IMDb">
+            <cd:Title>The Matrix</cd:Title>
+            <cd:Description>Neo discovers the truth about the reality.</cd:Description>
+            <cd:Genre>SCI_FI</cd:Genre>
+            <cd:DurationMinutes>136</cd:DurationMinutes>
+            <cd:Rating>8.7</cd:Rating>
+            <cd:ReleaseDate>1999-03-31</cd:ReleaseDate>
+            <cd:PosterURL>https://maksymchernenko.com/cine-book/posters/matrix.png</cd:PosterURL>
+        </cd:Movie>
+
+        <cd:Movie id="2">
+            <cd:Title>Inside Out</cd:Title>
+            <cd:Description>Animated story about emotions in a young girl's mind.</cd:Description>
+            <cd:Genre>ANIMATION</cd:Genre>
+            <cd:DurationMinutes>95</cd:DurationMinutes>
+            <cd:Rating>8.1</cd:Rating>
+            <cd:ReleaseDate>2015-06-19</cd:ReleaseDate>
+            <cd:PosterURL>https://maksymchernenko.com/cine-book/posters/insideout.jpg</cd:PosterURL>
+        </cd:Movie>
+
+        <cd:Movie id="3" ratingSource="RottenTomatoes">
+            <cd:Title>Interstellar</cd:Title>
+            <cd:Description>Explorers travel through a wormhole in space.</cd:Description>
+            <cd:Genre>SCI_FI</cd:Genre>
+            <cd:DurationMinutes>169</cd:DurationMinutes>
+            <cd:Rating>8.6</cd:Rating>
+            <cd:ReleaseDate>2014-11-07</cd:ReleaseDate>
+            <cd:PosterURL>https://maksymchernenko.com/cine-book/posters/interstellar.jpeg</cd:PosterURL>
+        </cd:Movie>
+    </cd:Movies>
+
+</cd:CinemaData>

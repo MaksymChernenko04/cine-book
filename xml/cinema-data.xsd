@@ -36,10 +36,48 @@
     </xsd:simpleType>
 
     <!-- Movie URL Type -->
-    <xsd:simpleType name="URLType">
+    <xsd:simpleType name="URL">
         <xsd:restriction base="xsd:string">
             <xsd:pattern value="https?://.+\.(jpg|jpeg|png)"/>
             <xsd:maxLength value="200"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Screening Price Type -->
+    <xsd:simpleType name="Price">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="2"/>
+            <xsd:minInclusive value="0.00"/>
+            <xsd:maxInclusive value="999.99"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Screening Price Currency Type -->
+    <xsd:simpleType name="Currency">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="USD"/>
+            <xsd:enumeration value="EUR"/>
+            <xsd:enumeration value="UAH"/>
+            <xsd:enumeration value="PLN"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Seat Type Type -->
+    <xsd:simpleType name="SeatType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="REGULAR"/>
+            <xsd:enumeration value="VIP"/>
+            <xsd:enumeration value="ACCESSIBLE"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Seat Status Type -->
+    <xsd:simpleType name="SeatStatus">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="AVAILABLE"/>
+            <xsd:enumeration value="LOCKED"/>
+            <xsd:enumeration value="SOLD"/>
         </xsd:restriction>
     </xsd:simpleType>
 
@@ -52,10 +90,48 @@
             <xsd:element name="DurationMinutes" type="cd:Duration"/>
             <xsd:element name="Rating" type="cd:Rating" minOccurs="0"/>
             <xsd:element name="ReleaseDate" type="xsd:date" minOccurs="0"/>
-            <xsd:element name="PosterURL" type="cd:URLType" minOccurs="0"/>
+            <xsd:element name="PosterURL" type="cd:URL" minOccurs="0"/>
         </xsd:sequence>
         <xsd:attribute name="id" type="xsd:positiveInteger" use="required"/>
         <xsd:attribute name="ratingSource" type="xsd:string"/>
+    </xsd:complexType>
+
+    <!-- Screening Type -->
+    <xsd:complexType name="Screening">
+        <xsd:sequence>
+            <xsd:element name="Movie" type="cd:Movie"/>
+            <xsd:element name="StartTime" type="xsd:dateTime"/>
+            <xsd:element name="Hall" type="cd:Hall"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:positiveInteger" use="required"/>
+    </xsd:complexType>
+
+    <!-- Hall Type -->
+    <xsd:complexType name="Hall">
+        <xsd:sequence>
+            <xsd:element name="Name" type="xsd:string"/>
+            <xsd:element name="Capacity" type="xsd:positiveInteger"/>
+            <xsd:element name="Seats">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Seat" type="cd:Seat" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="accessibility" type="xsd:boolean" default="false"/>
+    </xsd:complexType>
+
+    <!-- Seat Type -->
+    <xsd:complexType name="Seat">
+        <xsd:all>
+            <xsd:element name="Row" type="xsd:positiveInteger"/>
+            <xsd:element name="Number" type="xsd:positiveInteger"/>
+            <xsd:element name="Type" type="cd:SeatType"/>
+            <xsd:element name="Status" type="cd:SeatStatus"/>
+            <xsd:element name="LockToken" type="xsd:string" minOccurs="0"/>
+        </xsd:all>
+        <xsd:attribute name="id" type="xsd:positiveInteger" use="required"/>
     </xsd:complexType>
 
     <!-- CinemaData Root -->
@@ -66,6 +142,14 @@
                     <xsd:complexType>
                         <xsd:sequence>
                             <xsd:element name="Movie" type="cd:Movie" minOccurs="0" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+
+                <xsd:element name="Screenings">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Screening" type="cd:Screening" minOccurs="0" maxOccurs="unbounded"/>
                         </xsd:sequence>
                     </xsd:complexType>
                 </xsd:element>

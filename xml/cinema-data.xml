@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="cinema-transform.xslt"?>
 <cd:CinemaData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns:cd="http://maksymchernenko.com/cine-book"
          xsi:schemaLocation="http://maksymchernenko.com/cine-book cinema-data.xsd">
@@ -11,7 +12,7 @@
             <cd:DurationMinutes>136</cd:DurationMinutes>
             <cd:Rating>8.7</cd:Rating>
             <cd:ReleaseDate>1999-03-31</cd:ReleaseDate>
-            <cd:PosterURL>https://maksymchernenko.com/cine-book/posters/matrix.png</cd:PosterURL>
+            <cd:PosterURL>https://upload.wikimedia.org/wikipedia/en/d/db/The_Matrix.png</cd:PosterURL>
         </cd:Movie>
 
         <cd:Movie id="2">
@@ -21,7 +22,7 @@
             <cd:DurationMinutes>95</cd:DurationMinutes>
             <cd:Rating>8.1</cd:Rating>
             <cd:ReleaseDate>2015-06-19</cd:ReleaseDate>
-            <cd:PosterURL>https://maksymchernenko.com/cine-book/posters/insideout.jpg</cd:PosterURL>
+            <cd:PosterURL>https://upload.wikimedia.org/wikipedia/en/0/0a/Inside_Out_%282015_film%29_poster.jpg</cd:PosterURL>
         </cd:Movie>
 
         <cd:Movie id="3">
@@ -31,7 +32,7 @@
             <cd:DurationMinutes>169</cd:DurationMinutes>
             <cd:Rating>8.6</cd:Rating>
             <cd:ReleaseDate>2014-11-07</cd:ReleaseDate>
-            <cd:PosterURL>https://maksymchernenko.com/cine-book/posters/interstellar.jpeg</cd:PosterURL>
+            <cd:PosterURL>https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg</cd:PosterURL>
         </cd:Movie>
     </cd:Movies>
 
@@ -44,7 +45,7 @@
                 <cd:DurationMinutes>136</cd:DurationMinutes>
                 <cd:Rating>8.7</cd:Rating>
                 <cd:ReleaseDate>1999-03-31</cd:ReleaseDate>
-                <cd:PosterURL>https://maksymchernenko.com/cine-book/posters/matrix.png</cd:PosterURL>
+                <cd:PosterURL>https://upload.wikimedia.org/wikipedia/en/d/db/The_Matrix.png</cd:PosterURL>
             </cd:Movie>
 
             <cd:StartTime>2025-10-01T18:30:00</cd:StartTime>
@@ -87,7 +88,7 @@
                 <cd:DurationMinutes>169</cd:DurationMinutes>
                 <cd:Rating>8.6</cd:Rating>
                 <cd:ReleaseDate>2014-11-07</cd:ReleaseDate>
-                <cd:PosterURL>https://maksymchernenko.com/cine-book/posters/interstellar.jpeg</cd:PosterURL>
+                <cd:PosterURL>https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg</cd:PosterURL>
             </cd:Movie>
 
             <cd:StartTime>2025-10-01T15:00:00</cd:StartTime>
@@ -151,7 +152,7 @@
                     <cd:Number>1</cd:Number>
                     <cd:Type>ACCESSIBLE</cd:Type>
                     <cd:Price currency="PLN">29.50</cd:Price>
-                    <cd:Status>AVAILABLE</cd:Status>
+                    <cd:Status>SOLD</cd:Status>
                 </cd:Seat>
             </cd:BookedSeats>
 
@@ -220,7 +221,7 @@
                     <cd:Number>12</cd:Number>
                     <cd:Type>REGULAR</cd:Type>
                     <cd:Price currency="EUR">2.99</cd:Price>
-                    <cd:Status>LOCKED</cd:Status>
+                    <cd:Status>SOLD</cd:Status>
                 </cd:Seat>
             </cd:BookedSeats>
 

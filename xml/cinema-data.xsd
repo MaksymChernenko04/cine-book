@@ -4,6 +4,38 @@
             xmlns:cd="http://maksymchernenko.com/cine-book"
             elementFormDefault="qualified">
 
+    <!-- URL Type -->
+    <xsd:simpleType name="URL">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="https?://.+"/>
+            <xsd:maxLength value="200"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Image URL Type -->
+    <xsd:simpleType name="ImageURL">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="https?://.+\.(jpg|jpeg|png|JPG|JPEG|PNG)"/>
+            <xsd:maxLength value="250"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Title Type -->
+    <xsd:simpleType name="Title">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="100"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Description Type -->
+    <xsd:simpleType name="Description">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="1000"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
     <!-- Movie Genre Type -->
     <xsd:simpleType name="Genre">
         <xsd:restriction base="xsd:string">
@@ -19,7 +51,7 @@
 
     <!-- Movie Duration Type -->
     <xsd:simpleType name="Duration">
-        <xsd:restriction>
+        <xsd:restriction base="xsd:integer">
             <xsd:minInclusive value="1"/>
             <xsd:maxInclusive value="600"/>
         </xsd:restriction>
@@ -30,26 +62,8 @@
         <xsd:restriction base="xsd:decimal">
             <xsd:totalDigits value="3"/>
             <xsd:fractionDigits value="1"/>
-            <xsd:minInclusive value="0.0"/>
+            <xsd:minExclusive value="0.0"/>
             <xsd:maxInclusive value="10.0"/>
-        </xsd:restriction>
-    </xsd:simpleType>
-
-    <!-- Movie URL Type -->
-    <xsd:simpleType name="URL">
-        <xsd:restriction base="xsd:string">
-            <xsd:pattern value="https?://.+\.(jpg|jpeg|png)"/>
-            <xsd:maxLength value="200"/>
-        </xsd:restriction>
-    </xsd:simpleType>
-
-    <!-- Screening Price Type -->
-    <xsd:simpleType name="Price">
-        <xsd:restriction base="xsd:decimal">
-            <xsd:totalDigits value="5"/>
-            <xsd:fractionDigits value="2"/>
-            <xsd:minInclusive value="0.00"/>
-            <xsd:maxInclusive value="999.99"/>
         </xsd:restriction>
     </xsd:simpleType>
 
@@ -62,6 +76,24 @@
             <xsd:enumeration value="PLN"/>
         </xsd:restriction>
     </xsd:simpleType>
+
+    <!-- Screening Price Type -->
+    <xsd:simpleType name="PriceValue">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="2"/>
+            <xsd:minInclusive value="0.00"/>
+            <xsd:maxExclusive value="1000.00"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="Price">
+        <xsd:simpleContent>
+            <xsd:extension base="cd:PriceValue">
+                <xsd:attribute name="currency" type="cd:Currency" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
 
     <!-- Seat Type Type -->
     <xsd:simpleType name="SeatType">
@@ -81,19 +113,52 @@
         </xsd:restriction>
     </xsd:simpleType>
 
+    <!-- Email Type -->
+    <xsd:simpleType name="Email">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[A-Za-z]{2,}"/>
+            <xsd:maxLength value="100"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Booking Status Type -->
+    <xsd:simpleType name="BookingStatus">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="PENDING"/>
+            <xsd:enumeration value="CONFIRMED"/>
+            <xsd:enumeration value="CANCELLED"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Payment Method Type -->
+    <xsd:simpleType name="PaymentMethod">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="CARD"/>
+            <xsd:enumeration value="CASH"/>
+            <xsd:enumeration value="ONLINE"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Token Type -->
+    <xsd:simpleType name="Token">
+        <xsd:restriction base="xsd:string">
+            <xsd:length value="16"/>
+            <xsd:pattern value="[a-zA-Z0-9]+"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
     <!-- Movie Type -->
     <xsd:complexType name="Movie">
         <xsd:sequence>
-            <xsd:element name="Title" type="xsd:string"/>
-            <xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="Title" type="cd:Title"/>
+            <xsd:element name="Description" type="cd:Description" minOccurs="0"/>
             <xsd:element name="Genre" type="cd:Genre"/>
             <xsd:element name="DurationMinutes" type="cd:Duration"/>
             <xsd:element name="Rating" type="cd:Rating" minOccurs="0"/>
             <xsd:element name="ReleaseDate" type="xsd:date" minOccurs="0"/>
-            <xsd:element name="PosterURL" type="cd:URL" minOccurs="0"/>
+            <xsd:element name="PosterURL" type="cd:ImageURL" minOccurs="0"/>
         </xsd:sequence>
         <xsd:attribute name="id" type="xsd:positiveInteger" use="required"/>
-        <xsd:attribute name="ratingSource" type="xsd:string"/>
     </xsd:complexType>
 
     <!-- Screening Type -->
@@ -129,8 +194,47 @@
             <xsd:element name="Number" type="xsd:positiveInteger"/>
             <xsd:element name="Type" type="cd:SeatType"/>
             <xsd:element name="Status" type="cd:SeatStatus"/>
-            <xsd:element name="LockToken" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="Price" type="cd:Price"/>
+            <xsd:element name="LockToken" type="cd:Token" minOccurs="0"/>
         </xsd:all>
+        <xsd:attribute name="id" type="xsd:positiveInteger" use="required"/>
+    </xsd:complexType>
+
+    <!-- User Type -->
+    <xsd:complexType name="User">
+        <xsd:all>
+            <xsd:element name="Name" type="xsd:string"/>
+            <xsd:element name="Email" type="cd:Email"/>
+        </xsd:all>
+    </xsd:complexType>
+
+    <!-- Payment Type -->
+    <xsd:complexType name="Payment">
+        <xsd:sequence>
+            <xsd:element name="Method" type="cd:PaymentMethod"/>
+            <xsd:choice>
+                <xsd:element name="PaidAt" type="xsd:dateTime"/>
+                <xsd:element name="ExpectedRedirectURL" type="cd:URL"/>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Booking Type -->
+    <xsd:complexType name="Booking">
+        <xsd:sequence>
+            <xsd:element name="User" type="cd:User"/>
+            <xsd:element name="BookingStatus" type="cd:BookingStatus"/>
+            <xsd:element name="Screening" type="cd:Screening"/>
+            <xsd:element name="BookedSeats">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Seat" type="cd:Seat" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="TotalPrice" type="cd:Price"/>
+            <xsd:element name="Payment" type="cd:Payment" minOccurs="0"/>
+        </xsd:sequence>
         <xsd:attribute name="id" type="xsd:positiveInteger" use="required"/>
     </xsd:complexType>
 
@@ -150,6 +254,14 @@
                     <xsd:complexType>
                         <xsd:sequence>
                             <xsd:element name="Screening" type="cd:Screening" minOccurs="0" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+
+                <xsd:element name="Bookings">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Booking" type="cd:Booking" minOccurs="0" maxOccurs="unbounded"/>
                         </xsd:sequence>
                     </xsd:complexType>
                 </xsd:element>

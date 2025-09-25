@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maksymchernenko.com/cine-book cinema-data.xsd">
 
     <cd:Movies>
-        <cd:Movie id="1" ratingSource="IMDb">
+        <cd:Movie id="1">
             <cd:Title>The Matrix</cd:Title>
             <cd:Description>Neo discovers the truth about the reality.</cd:Description>
             <cd:Genre>SCI_FI</cd:Genre>
@@ -24,7 +24,7 @@
             <cd:PosterURL>https://maksymchernenko.com/cine-book/posters/insideout.jpg</cd:PosterURL>
         </cd:Movie>
 
-        <cd:Movie id="3" ratingSource="RottenTomatoes">
+        <cd:Movie id="3">
             <cd:Title>Interstellar</cd:Title>
             <cd:Description>Explorers travel through a wormhole in space.</cd:Description>
             <cd:Genre>SCI_FI</cd:Genre>
@@ -37,7 +37,7 @@
 
     <cd:Screenings>
         <cd:Screening id="101">
-            <cd:Movie id="1" ratingSource="IMDb">
+            <cd:Movie id="1">
                 <cd:Title>The Matrix</cd:Title>
                 <cd:Description>Neo discovers the truth about the reality.</cd:Description>
                 <cd:Genre>SCI_FI</cd:Genre>
@@ -57,6 +57,7 @@
                         <cd:Row>1</cd:Row>
                         <cd:Number>1</cd:Number>
                         <cd:Type>REGULAR</cd:Type>
+                        <cd:Price currency="UAH">120</cd:Price>
                         <cd:Status>AVAILABLE</cd:Status>
                     </cd:Seat>
                     <cd:Seat id="12">
@@ -64,12 +65,14 @@
                         <cd:Number>2</cd:Number>
                         <cd:Type>VIP</cd:Type>
                         <cd:Status>LOCKED</cd:Status>
-                        <cd:LockToken>lock-xyz-123</cd:LockToken>
+                        <cd:Price currency="PLN">29.99</cd:Price>
+                        <cd:LockToken>Xh2j3bHk34feo455</cd:LockToken>
                     </cd:Seat>
                     <cd:Seat id="13">
                         <cd:Row>3</cd:Row>
                         <cd:Number>1</cd:Number>
                         <cd:Type>REGULAR</cd:Type>
+                        <cd:Price currency="EUR">3.49</cd:Price>
                         <cd:Status>SOLD</cd:Status>
                     </cd:Seat>
                 </cd:Seats>
@@ -77,7 +80,7 @@
         </cd:Screening>
 
         <cd:Screening id="102">
-            <cd:Movie id="3" ratingSource="RottenTomatoes">
+            <cd:Movie id="3">
                 <cd:Title>Interstellar</cd:Title>
                 <cd:Description>Explorers travel through a wormhole in space.</cd:Description>
                 <cd:Genre>SCI_FI</cd:Genre>
@@ -97,11 +100,137 @@
                         <cd:Row>1</cd:Row>
                         <cd:Number>1</cd:Number>
                         <cd:Type>ACCESSIBLE</cd:Type>
+                        <cd:Price currency="UAH">60</cd:Price>
                         <cd:Status>AVAILABLE</cd:Status>
                     </cd:Seat>
                 </cd:Seats>
             </cd:Hall>
         </cd:Screening>
     </cd:Screenings>
+
+    <cd:Bookings>
+        <cd:Booking id="1001">
+            <cd:User>
+                <cd:Name>Ivan Petrov</cd:Name>
+                <cd:Email>ivan.petrov@example.com</cd:Email>
+            </cd:User>
+
+            <cd:BookingStatus>CONFIRMED</cd:BookingStatus>
+
+            <cd:Screening id="102">
+                <cd:Movie id="3">
+                    <cd:Title>Interstellar</cd:Title>
+                    <cd:Description>Explorers travel through a wormhole in space.</cd:Description>
+                    <cd:Genre>SCI_FI</cd:Genre>
+                    <cd:DurationMinutes>169</cd:DurationMinutes>
+                    <cd:Rating>8.6</cd:Rating>
+                    <cd:ReleaseDate>2014-11-07</cd:ReleaseDate>
+                    <cd:PosterURL>https://maksymchernenko.com/cine-book/posters/interstellar.jpeg</cd:PosterURL>
+                </cd:Movie>
+
+                <cd:StartTime>2025-10-01T15:00:00</cd:StartTime>
+
+                <cd:Hall accessibility="true">
+                    <cd:Name>Small Hall</cd:Name>
+                    <cd:Capacity>40</cd:Capacity>
+                    <cd:Seats>
+                        <cd:Seat id="50">
+                            <cd:Row>1</cd:Row>
+                            <cd:Number>1</cd:Number>
+                            <cd:Type>ACCESSIBLE</cd:Type>
+                            <cd:Price currency="UAH">60</cd:Price>
+                            <cd:Status>AVAILABLE</cd:Status>
+                        </cd:Seat>
+                    </cd:Seats>
+                </cd:Hall>
+            </cd:Screening>
+
+            <cd:BookedSeats>
+                <cd:Seat id="50">
+                    <cd:Row>1</cd:Row>
+                    <cd:Number>1</cd:Number>
+                    <cd:Type>ACCESSIBLE</cd:Type>
+                    <cd:Price currency="PLN">29.50</cd:Price>
+                    <cd:Status>AVAILABLE</cd:Status>
+                </cd:Seat>
+            </cd:BookedSeats>
+
+            <cd:TotalPrice currency="PLN">29.50</cd:TotalPrice>
+
+            <cd:Payment>
+                <cd:Method>CARD</cd:Method>
+                <cd:PaidAt>2025-09-20T10:12:00</cd:PaidAt>
+            </cd:Payment>
+        </cd:Booking>
+
+        <cd:Booking id="1002">
+            <cd:User>
+                <cd:Name>Maria Kovalenko</cd:Name>
+                <cd:Email>maria.k@example.com</cd:Email>
+            </cd:User>
+
+            <cd:BookingStatus>PENDING</cd:BookingStatus>
+
+            <cd:Screening id="101">
+                <cd:Movie id="1">
+                    <cd:Title>The Matrix</cd:Title>
+                    <cd:Description>Neo discovers the truth about the reality.</cd:Description>
+                    <cd:Genre>SCI_FI</cd:Genre>
+                    <cd:DurationMinutes>136</cd:DurationMinutes>
+                    <cd:Rating>8.7</cd:Rating>
+                    <cd:ReleaseDate>1999-03-31</cd:ReleaseDate>
+                    <cd:PosterURL>https://maksymchernenko.com/cine-book/posters/matrix.png</cd:PosterURL>
+                </cd:Movie>
+
+                <cd:StartTime>2025-10-01T18:30:00</cd:StartTime>
+
+                <cd:Hall>
+                    <cd:Name>Main Hall</cd:Name>
+                    <cd:Capacity>120</cd:Capacity>
+                    <cd:Seats>
+                        <cd:Seat id="11">
+                            <cd:Row>1</cd:Row>
+                            <cd:Number>1</cd:Number>
+                            <cd:Type>REGULAR</cd:Type>
+                            <cd:Price currency="USD">5</cd:Price>
+                            <cd:Status>AVAILABLE</cd:Status>
+                        </cd:Seat>
+                        <cd:Seat id="12">
+                            <cd:Row>6</cd:Row>
+                            <cd:Number>2</cd:Number>
+                            <cd:Type>VIP</cd:Type>
+                            <cd:Status>LOCKED</cd:Status>
+                            <cd:Price currency="UAH">300</cd:Price>
+                            <cd:LockToken>JH3byuEfHG3iro6j</cd:LockToken>
+                        </cd:Seat>
+                        <cd:Seat id="13">
+                            <cd:Row>3</cd:Row>
+                            <cd:Number>1</cd:Number>
+                            <cd:Type>REGULAR</cd:Type>
+                            <cd:Price currency="UAH">150</cd:Price>
+                            <cd:Status>SOLD</cd:Status>
+                        </cd:Seat>
+                    </cd:Seats>
+                </cd:Hall>
+            </cd:Screening>
+
+            <cd:BookedSeats>
+                <cd:Seat id="65">
+                    <cd:Row>5</cd:Row>
+                    <cd:Number>12</cd:Number>
+                    <cd:Type>REGULAR</cd:Type>
+                    <cd:Price currency="EUR">2.99</cd:Price>
+                    <cd:Status>LOCKED</cd:Status>
+                </cd:Seat>
+            </cd:BookedSeats>
+
+            <cd:TotalPrice currency="EUR">2.99</cd:TotalPrice>
+
+            <cd:Payment>
+                <cd:Method>ONLINE</cd:Method>
+                <cd:ExpectedRedirectURL>https://pay.example.com/session/xyz</cd:ExpectedRedirectURL>
+            </cd:Payment>
+        </cd:Booking>
+    </cd:Bookings>
 
 </cd:CinemaData>

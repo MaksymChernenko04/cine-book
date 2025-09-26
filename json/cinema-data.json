@@ -1,0 +1,270 @@
+{
+  "CinemaData": {
+    "Movies": [
+      {
+        "id": 1,
+        "Title": "The Matrix",
+        "Description": "Neo discovers the truth about the reality.",
+        "Genre": "SCI_FI",
+        "DurationMinutes": 136,
+        "Rating": 8.7,
+        "ReleaseDate": "1999-03-31",
+        "PosterURL": "https://upload.wikimedia.org/wikipedia/en/d/db/The_Matrix.png"
+      },
+      {
+        "id": 2,
+        "Title": "Inside Out",
+        "Description": "Animated story about emotions in a young girl's mind.",
+        "Genre": "ANIMATION",
+        "DurationMinutes": 95,
+        "Rating": 8.1,
+        "ReleaseDate": "2015-06-19",
+        "PosterURL": "https://upload.wikimedia.org/wikipedia/en/0/0a/Inside_Out_%282015_film%29_poster.jpg"
+      },
+      {
+        "id": 3,
+        "Title": "Interstellar",
+        "Description": "Explorers travel through a wormhole in space.",
+        "Genre": "SCI_FI",
+        "DurationMinutes": 169,
+        "Rating": 8.6,
+        "ReleaseDate": "2014-11-07",
+        "PosterURL": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg"
+      }
+    ],
+    "Screenings": [
+      {
+        "id": 101,
+        "Movie": {
+          "id": 1,
+          "Title": "The Matrix",
+          "Description": "Neo discovers the truth about the reality.",
+          "Genre": "SCI_FI",
+          "DurationMinutes": 136,
+          "Rating": 8.7,
+          "ReleaseDate": "1999-03-31",
+          "PosterURL": "https://upload.wikimedia.org/wikipedia/en/d/db/The_Matrix.png"
+        },
+        "StartTime": "2025-10-01T18:30:00",
+        "Hall": {
+          "Name": "Main Hall",
+          "Capacity": 120,
+          "Seats": [
+            {
+              "id": 11,
+              "Row": 1,
+              "Number": 1,
+              "Type": "REGULAR",
+              "Price": {
+                "amount": 120,
+                "currency": "UAH"
+              },
+              "Status": "AVAILABLE"
+            },
+            {
+              "id": 12,
+              "Row": 6,
+              "Number": 2,
+              "Type": "VIP",
+              "Price": {
+                "amount": 29.99,
+                "currency": "PLN"
+              },
+              "Status": "LOCKED",
+              "LockToken": "Xh2j3bHk34feo455"
+            },
+            {
+              "id": 13,
+              "Row": 3,
+              "Number": 1,
+              "Type": "REGULAR",
+              "Price": {
+                "amount": 3.49,
+                "currency": "EUR"
+              },
+              "Status": "SOLD"
+            }
+          ]
+        }
+      },
+      {
+        "id": 102,
+        "Movie": {
+          "id": 3,
+          "Title": "Interstellar",
+          "Description": "Explorers travel through a wormhole in space.",
+          "Genre": "SCI_FI",
+          "DurationMinutes": 169,
+          "Rating": 8.6,
+          "ReleaseDate": "2014-11-07",
+          "PosterURL": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg"
+        },
+        "StartTime": "2025-10-01T15:00:00",
+        "Hall": {
+          "accessibility": true,
+          "Name": "Small Hall",
+          "Capacity": 40,
+          "Seats": [
+            {
+              "id": 50,
+              "Row": 1,
+              "Number": 1,
+              "Type": "ACCESSIBLE",
+              "Price": {
+                "amount": 60,
+                "currency": "UAH"
+              },
+              "Status": "AVAILABLE"
+            }
+          ]
+        }
+      }
+    ],
+    "Bookings": [
+      {
+        "id": 1001,
+        "User": {
+          "Name": "Ivan Petrov",
+          "Email": "ivan.petrov@example.com"
+        },
+        "BookingStatus": "CONFIRMED",
+        "Screening": {
+          "id": 102,
+          "Movie": {
+            "id": 3,
+            "Title": "Interstellar",
+            "Description": "Explorers travel through a wormhole in space.",
+            "Genre": "SCI_FI",
+            "DurationMinutes": 169,
+            "Rating": 8.6,
+            "ReleaseDate": "2014-11-07",
+            "PosterURL": "https://maksymchernenko.com/cine-book/posters/interstellar.jpeg"
+          },
+          "StartTime": "2025-10-01T15:00:00",
+          "Hall": {
+            "accessibility": true,
+            "Name": "Small Hall",
+            "Capacity": 40,
+            "Seats": [
+              {
+                "id": 50,
+                "Row": 1,
+                "Number": 1,
+                "Type": "ACCESSIBLE",
+                "Price": {
+                  "amount": 60,
+                  "currency": "UAH"
+                },
+                "Status": "AVAILABLE"
+              }
+            ]
+          }
+        },
+        "BookedSeats": [
+          {
+            "id": 50,
+            "Row": 1,
+            "Number": 1,
+            "Type": "ACCESSIBLE",
+            "Price": {
+              "amount": 29.5,
+              "currency": "PLN"
+            },
+            "Status": "SOLD"
+          }
+        ],
+        "TotalPrice": {
+          "amount": 29.5,
+          "currency": "PLN"
+        },
+        "Payment": {
+          "Method": "CARD",
+          "PaidAt": "2025-09-20T10:12:00"
+        }
+      },
+      {
+        "id": 1002,
+        "User": {
+          "Name": "Maria Kovalenko",
+          "Email": "maria.k@example.com"
+        },
+        "BookingStatus": "PENDING",
+        "Screening": {
+          "id": 101,
+          "Movie": {
+            "id": 1,
+            "Title": "The Matrix",
+            "Description": "Neo discovers the truth about the reality.",
+            "Genre": "SCI_FI",
+            "DurationMinutes": 136,
+            "Rating": 8.7,
+            "ReleaseDate": "1999-03-31",
+            "PosterURL": "https://maksymchernenko.com/cine-book/posters/matrix.png"
+          },
+          "StartTime": "2025-10-01T18:30:00",
+          "Hall": {
+            "Name": "Main Hall",
+            "Capacity": 120,
+            "Seats": [
+              {
+                "id": 11,
+                "Row": 1,
+                "Number": 1,
+                "Type": "REGULAR",
+                "Price": {
+                  "amount": 5,
+                  "currency": "USD"
+                },
+                "Status": "AVAILABLE"
+              },
+              {
+                "id": 12,
+                "Row": 6,
+                "Number": 2,
+                "Type": "VIP",
+                "Status": "LOCKED",
+                "Price": {
+                  "amount": 300,
+                  "currency": "UAH"
+                },
+                "LockToken": "JH3byuEfHG3iro6j"
+              },
+              {
+                "id": 13,
+                "Row": 3,
+                "Number": 1,
+                "Type": "REGULAR",
+                "Price": {
+                  "amount": 150,
+                  "currency": "UAH"
+                },
+                "Status": "SOLD"
+              }
+            ]
+          }
+        },
+        "BookedSeats": [
+          {
+            "id": 65,
+            "Row": 5,
+            "Number": 12,
+            "Type": "REGULAR",
+            "Price": {
+              "amount": 2.99,
+              "currency": "EUR"
+            },
+            "Status": "SOLD"
+          }
+        ],
+        "TotalPrice": {
+          "amount": 2.99,
+          "currency": "EUR"
+        },
+        "Payment": {
+          "Method": "ONLINE",
+          "ExpectedRedirectURL": "https://pay.example.com/session/xyz"
+        }
+      }
+    ]
+  }
+}

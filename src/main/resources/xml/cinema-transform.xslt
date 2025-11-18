@@ -155,7 +155,7 @@
                                 <xsl:value-of select="concat('Email: ', cd:User/cd:Email)"/>
                             </td>
                             <td>
-                                <xsl:if test="cd:BookingStatus = 'CANCELED'"><span class="red-status"><xsl:value-of select="cd:BookingStatus"/></span></xsl:if>
+                                <xsl:if test="cd:BookingStatus = 'CANCELLED'"><span class="red-status"><xsl:value-of select="cd:BookingStatus"/></span></xsl:if>
                                 <xsl:if test="cd:BookingStatus = 'PENDING'"><span class="yellow-status"><xsl:value-of select="cd:BookingStatus"/></span></xsl:if>
                                 <xsl:if test="cd:BookingStatus = 'CONFIRMED'"><span class="green-status"><xsl:value-of select="cd:BookingStatus"/></span></xsl:if>
                             </td>
@@ -170,14 +170,14 @@
                             </td>
                             <td>
                                 <xsl:for-each select="cd:BookedSeats/cd:Seat">
-                                    <xsl:value-of select="concat('Row ', cd:Row, ', №', cd:Number, ' (', cd:Type, ') ', 'Price - ', cd:Price, cd:Price/@currency, ' ')"/>
+                                    <xsl:value-of select="concat('Row ', cd:Row, ', №', cd:Number, ' (', cd:Type, ') ', 'Price - ', cd:Price/cd:Amount, ' ', cd:Price/@currency, ' ')"/>
                                     <xsl:if test="cd:Status = 'SOLD'"><span class="red-status"><xsl:value-of select="cd:Status"/></span></xsl:if>
                                     <xsl:if test="cd:Status = 'LOCKED'"><span class="yellow-status"><xsl:value-of select="cd:Status"/></span></xsl:if>
                                     <xsl:if test="cd:Status = 'AVAILABLE'"><span class="green-status"><xsl:value-of select="cd:Status"/></span></xsl:if>
                                     <xsl:if test="position() != last()"><br/><br/></xsl:if>
                                 </xsl:for-each>
                             </td>
-                            <td><xsl:value-of select="concat(cd:TotalPrice, cd:TotalPrice/@currency)"/></td>
+                            <td><xsl:value-of select="concat(cd:TotalPrice/cd:Amount, ' ', cd:TotalPrice/@currency)"/></td>
                             <td>
                                 <xsl:value-of select="concat('Method: ', cd:Payment/cd:Method)"/>
                                 <br/>

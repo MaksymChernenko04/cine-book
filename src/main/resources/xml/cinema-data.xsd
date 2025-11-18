@@ -88,11 +88,10 @@
     </xsd:simpleType>
 
     <xsd:complexType name="Price">
-        <xsd:simpleContent>
-            <xsd:extension base="cd:PriceValue">
-                <xsd:attribute name="currency" type="cd:Currency" use="required"/>
-            </xsd:extension>
-        </xsd:simpleContent>
+        <xsd:sequence>
+            <xsd:element name="Amount" type="cd:PriceValue"/>
+        </xsd:sequence>
+        <xsd:attribute name="currency" type="cd:Currency" use="required"/>
     </xsd:complexType>
 
     <!-- Seat Type Type -->
@@ -142,8 +141,8 @@
     <!-- Token Type -->
     <xsd:simpleType name="Token">
         <xsd:restriction base="xsd:string">
-            <xsd:length value="16"/>
-            <xsd:pattern value="[a-zA-Z0-9]+"/>
+            <xsd:length value="36"/>
+            <xsd:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"/>
         </xsd:restriction>
     </xsd:simpleType>
 
@@ -185,6 +184,7 @@
             </xsd:element>
         </xsd:sequence>
         <xsd:attribute name="accessibility" type="xsd:boolean" default="false"/>
+        <xsd:attribute name="id" type="xsd:positiveInteger" use="required"/>
     </xsd:complexType>
 
     <!-- Seat Type -->
@@ -198,6 +198,7 @@
             <xsd:element name="LockToken" type="cd:Token" minOccurs="0"/>
         </xsd:all>
         <xsd:attribute name="id" type="xsd:positiveInteger" use="required"/>
+        <xsd:attribute name="hallId" type="xsd:positiveInteger" use="required"/>
     </xsd:complexType>
 
     <!-- User Type -->

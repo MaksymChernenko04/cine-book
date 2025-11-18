@@ -79,6 +79,7 @@
     "Hall": {
       "type": "object",
       "properties": {
+        "id": { "type": "integer", "minimum": 1 },
         "accessibility": { "type": "boolean", "default": false },
         "Name": { "type": "string" },
         "Capacity": { "type": "integer", "minimum": 1 },
@@ -87,13 +88,14 @@
           "items": { "$ref": "#/$defs/Seat" }
         }
       },
-      "required": ["Name", "Capacity", "Seats"],
+      "required": ["id", "Name", "Capacity", "Seats"],
       "additionalProperties": false
     },
     "Seat": {
       "type": "object",
       "properties": {
         "id": { "type": "integer", "minimum": 1 },
+        "hallId": { "type": "integer", "minimum": 1 },
         "Row": { "type": "integer", "minimum": 1 },
         "Number": { "type": "integer", "minimum": 1 },
         "Type": { "type": "string", "enum": ["REGULAR", "VIP", "ACCESSIBLE"] },
@@ -101,10 +103,10 @@
         "Price": { "$ref": "#/$defs/Price" },
         "LockToken": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9]{16}$"
+          "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
         }
       },
-      "required": ["id", "Row", "Number", "Type", "Status", "Price"],
+      "required": ["id", "hallId", "Row", "Number", "Type", "Status", "Price"],
       "additionalProperties": false
     },
     "Price": {

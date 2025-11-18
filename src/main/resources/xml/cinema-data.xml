@@ -50,30 +50,36 @@
 
             <cd:StartTime>2025-10-01T18:30:00</cd:StartTime>
 
-            <cd:Hall>
+            <cd:Hall id="1">
                 <cd:Name>Main Hall</cd:Name>
                 <cd:Capacity>120</cd:Capacity>
                 <cd:Seats>
-                    <cd:Seat id="11">
+                    <cd:Seat id="11" hallId="1">
                         <cd:Row>1</cd:Row>
                         <cd:Number>1</cd:Number>
                         <cd:Type>REGULAR</cd:Type>
-                        <cd:Price currency="UAH">120</cd:Price>
+                        <cd:Price currency="UAH">
+                            <cd:Amount>120</cd:Amount>
+                        </cd:Price>
                         <cd:Status>AVAILABLE</cd:Status>
                     </cd:Seat>
-                    <cd:Seat id="12">
+                    <cd:Seat id="12" hallId="1">
                         <cd:Row>6</cd:Row>
                         <cd:Number>2</cd:Number>
                         <cd:Type>VIP</cd:Type>
                         <cd:Status>LOCKED</cd:Status>
-                        <cd:Price currency="PLN">29.99</cd:Price>
-                        <cd:LockToken>Xh2j3bHk34feo455</cd:LockToken>
+                        <cd:Price currency="PLN">
+                            <cd:Amount>29.99</cd:Amount>
+                        </cd:Price>
+                        <cd:LockToken>6768203b-3f27-4f59-b1a0-3a9fc8bf0b70</cd:LockToken>
                     </cd:Seat>
-                    <cd:Seat id="13">
+                    <cd:Seat id="13" hallId="1">
                         <cd:Row>3</cd:Row>
                         <cd:Number>1</cd:Number>
                         <cd:Type>REGULAR</cd:Type>
-                        <cd:Price currency="EUR">3.49</cd:Price>
+                        <cd:Price currency="EUR">
+                            <cd:Amount>3.49</cd:Amount>
+                        </cd:Price>
                         <cd:Status>SOLD</cd:Status>
                     </cd:Seat>
                 </cd:Seats>
@@ -93,15 +99,17 @@
 
             <cd:StartTime>2025-10-01T15:00:00</cd:StartTime>
 
-            <cd:Hall accessibility="true">
+            <cd:Hall id="2" accessibility="true">
                 <cd:Name>Small Hall</cd:Name>
                 <cd:Capacity>40</cd:Capacity>
                 <cd:Seats>
-                    <cd:Seat id="50">
+                    <cd:Seat id="50" hallId="2">
                         <cd:Row>1</cd:Row>
                         <cd:Number>1</cd:Number>
                         <cd:Type>ACCESSIBLE</cd:Type>
-                        <cd:Price currency="UAH">60</cd:Price>
+                        <cd:Price currency="UAH">
+                            <cd:Amount>60</cd:Amount>
+                        </cd:Price>
                         <cd:Status>AVAILABLE</cd:Status>
                     </cd:Seat>
                 </cd:Seats>
@@ -131,15 +139,17 @@
 
                 <cd:StartTime>2025-10-01T15:00:00</cd:StartTime>
 
-                <cd:Hall accessibility="true">
+                <cd:Hall id="2" accessibility="true">
                     <cd:Name>Small Hall</cd:Name>
                     <cd:Capacity>40</cd:Capacity>
                     <cd:Seats>
-                        <cd:Seat id="50">
+                        <cd:Seat id="50" hallId="2">
                             <cd:Row>1</cd:Row>
                             <cd:Number>1</cd:Number>
                             <cd:Type>ACCESSIBLE</cd:Type>
-                            <cd:Price currency="UAH">60</cd:Price>
+                            <cd:Price currency="UAH">
+                                <cd:Amount>60</cd:Amount>
+                            </cd:Price>
                             <cd:Status>AVAILABLE</cd:Status>
                         </cd:Seat>
                     </cd:Seats>
@@ -147,16 +157,20 @@
             </cd:Screening>
 
             <cd:BookedSeats>
-                <cd:Seat id="50">
+                <cd:Seat id="50" hallId="2">
                     <cd:Row>1</cd:Row>
                     <cd:Number>1</cd:Number>
                     <cd:Type>ACCESSIBLE</cd:Type>
-                    <cd:Price currency="PLN">29.50</cd:Price>
+                    <cd:Price currency="PLN">
+                        <cd:Amount>29.50</cd:Amount>
+                    </cd:Price>
                     <cd:Status>SOLD</cd:Status>
                 </cd:Seat>
             </cd:BookedSeats>
 
-            <cd:TotalPrice currency="PLN">29.50</cd:TotalPrice>
+            <cd:TotalPrice currency="PLN">
+                <cd:Amount>29.50</cd:Amount>
+            </cd:TotalPrice>
 
             <cd:Payment>
                 <cd:Method>CARD</cd:Method>
@@ -185,30 +199,36 @@
 
                 <cd:StartTime>2025-10-01T18:30:00</cd:StartTime>
 
-                <cd:Hall>
+                <cd:Hall id="1">
                     <cd:Name>Main Hall</cd:Name>
                     <cd:Capacity>120</cd:Capacity>
                     <cd:Seats>
-                        <cd:Seat id="11">
+                        <cd:Seat id="11" hallId="1">
                             <cd:Row>1</cd:Row>
                             <cd:Number>1</cd:Number>
                             <cd:Type>REGULAR</cd:Type>
-                            <cd:Price currency="USD">5</cd:Price>
+                            <cd:Price currency="USD">
+                                <cd:Amount>5</cd:Amount>
+                            </cd:Price>
                             <cd:Status>AVAILABLE</cd:Status>
                         </cd:Seat>
-                        <cd:Seat id="12">
+                        <cd:Seat id="12" hallId="1">
                             <cd:Row>6</cd:Row>
                             <cd:Number>2</cd:Number>
                             <cd:Type>VIP</cd:Type>
                             <cd:Status>LOCKED</cd:Status>
-                            <cd:Price currency="UAH">300</cd:Price>
-                            <cd:LockToken>JH3byuEfHG3iro6j</cd:LockToken>
+                            <cd:Price currency="UAH">
+                                <cd:Amount>300</cd:Amount>
+                            </cd:Price>
+                            <cd:LockToken>5d6ac655-0871-4913-871d-ce27683a9e9f</cd:LockToken>
                         </cd:Seat>
-                        <cd:Seat id="13">
+                        <cd:Seat id="13" hallId="1">
                             <cd:Row>3</cd:Row>
                             <cd:Number>1</cd:Number>
                             <cd:Type>REGULAR</cd:Type>
-                            <cd:Price currency="UAH">150</cd:Price>
+                            <cd:Price currency="UAH">
+                                <cd:Amount>150</cd:Amount>
+                            </cd:Price>
                             <cd:Status>SOLD</cd:Status>
                         </cd:Seat>
                     </cd:Seats>
@@ -216,16 +236,20 @@
             </cd:Screening>
 
             <cd:BookedSeats>
-                <cd:Seat id="65">
+                <cd:Seat id="65" hallId="1">
                     <cd:Row>5</cd:Row>
                     <cd:Number>12</cd:Number>
                     <cd:Type>REGULAR</cd:Type>
-                    <cd:Price currency="EUR">2.99</cd:Price>
+                    <cd:Price currency="EUR">
+                        <cd:Amount>2.99</cd:Amount>
+                    </cd:Price>
                     <cd:Status>SOLD</cd:Status>
                 </cd:Seat>
             </cd:BookedSeats>
 
-            <cd:TotalPrice currency="EUR">2.99</cd:TotalPrice>
+            <cd:TotalPrice currency="EUR">
+                <cd:Amount>2.99</cd:Amount>
+            </cd:TotalPrice>
 
             <cd:Payment>
                 <cd:Method>ONLINE</cd:Method>

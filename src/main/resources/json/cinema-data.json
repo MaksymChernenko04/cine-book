@@ -47,11 +47,13 @@
         },
         "StartTime": "2025-10-01T18:30:00",
         "Hall": {
+          "id": 1,
           "Name": "Main Hall",
           "Capacity": 120,
           "Seats": [
             {
               "id": 11,
+              "hallId": 1,
               "Row": 1,
               "Number": 1,
               "Type": "REGULAR",
@@ -63,6 +65,7 @@
             },
             {
               "id": 12,
+              "hallId": 1,
               "Row": 6,
               "Number": 2,
               "Type": "VIP",
@@ -75,6 +78,7 @@
             },
             {
               "id": 13,
+              "hallId": 1,
               "Row": 3,
               "Number": 1,
               "Type": "REGULAR",
@@ -101,12 +105,14 @@
         },
         "StartTime": "2025-10-01T15:00:00",
         "Hall": {
+          "id": 2,
           "accessibility": true,
           "Name": "Small Hall",
           "Capacity": 40,
           "Seats": [
             {
               "id": 50,
+              "hallId": 2,
               "Row": 1,
               "Number": 1,
               "Type": "ACCESSIBLE",
@@ -142,12 +148,14 @@
           },
           "StartTime": "2025-10-01T15:00:00",
           "Hall": {
+            "id": 2,
             "accessibility": true,
             "Name": "Small Hall",
             "Capacity": 40,
             "Seats": [
               {
                 "id": 50,
+                "hallId": 2,
                 "Row": 1,
                 "Number": 1,
                 "Type": "ACCESSIBLE",
@@ -163,6 +171,7 @@
         "BookedSeats": [
           {
             "id": 50,
+            "hallId": 2,
             "Row": 1,
             "Number": 1,
             "Type": "ACCESSIBLE",
@@ -203,11 +212,13 @@
           },
           "StartTime": "2025-10-01T18:30:00",
           "Hall": {
+            "id": 1,
             "Name": "Main Hall",
             "Capacity": 120,
             "Seats": [
               {
                 "id": 11,
+                "hallId": 1,
                 "Row": 1,
                 "Number": 1,
                 "Type": "REGULAR",
@@ -219,6 +230,7 @@
               },
               {
                 "id": 12,
+                "hallId": 1,
                 "Row": 6,
                 "Number": 2,
                 "Type": "VIP",
@@ -231,6 +243,7 @@
               },
               {
                 "id": 13,
+                "hallId": 1,
                 "Row": 3,
                 "Number": 1,
                 "Type": "REGULAR",
@@ -246,6 +259,7 @@
         "BookedSeats": [
           {
             "id": 65,
+            "hallId": 1,
             "Row": 5,
             "Number": 12,
             "Type": "REGULAR",

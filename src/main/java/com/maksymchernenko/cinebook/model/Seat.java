@@ -16,6 +16,10 @@ public class Seat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "hall_id", nullable = false)
+    private Hall hall;
+
     @NotNull(message = "Seat row must be not null")
     @Min(value = 1, message = "Seat row must be a positive number")
     private Integer row;
@@ -28,26 +32,12 @@ public class Seat {
     @Enumerated(EnumType.STRING)
     private Type type;
 
-    @NotNull(message = "Seat status must be not null")
-    @Enumerated(EnumType.STRING)
-    private Status status;
-
     @Embedded
     private Price price;
-
-    @Size(min = 16, max = 16, message = "Seat lock token must be exactly 16 characters")
-    @Pattern(regexp = "[a-zA-Z0-9]+", message = "Seat lock token must be alphanumeric")
-    private String lockToken;
 
     public enum Type {
         REGULAR,
         VIP,
         ACCESSIBLE
-    }
-
-    public enum Status {
-        AVAILABLE,
-        LOCKED,
-        SOLD
     }
 }

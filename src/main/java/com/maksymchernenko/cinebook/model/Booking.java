@@ -33,7 +33,12 @@ public class Booking {
 
     @NotEmpty(message = "Booking bookedSeats must contain at least one seat")
     @ManyToMany
-    private List<Seat> bookedSeats;
+    @JoinTable(
+            name = "booking_screening_seat",
+            joinColumns = @JoinColumn(name = "booking_id"),
+            inverseJoinColumns = @JoinColumn(name = "screening_seat_id")
+    )
+    private List<ScreeningSeat> bookedSeats;
 
     @Embedded
     @NotNull(message = "Booking totalPrice must be not null")

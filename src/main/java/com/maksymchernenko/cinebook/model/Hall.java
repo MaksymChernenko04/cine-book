@@ -27,7 +27,7 @@ public class Hall {
     @Min(value = 1, message = "Hall capacity must be a positive number")
     private Integer capacity;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "hall", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Seat> seats;
 
     @NotNull(message = "Hall accessibility flag must be not null")

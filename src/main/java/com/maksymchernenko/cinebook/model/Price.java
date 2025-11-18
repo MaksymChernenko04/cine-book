@@ -21,7 +21,7 @@ public class Price {
     @Digits(integer = 5, fraction = 2, message = "Price value must have up to 5 integer digits and up to 2 fraction digits")
     @DecimalMin(value = "0.00", message = "Price value must be greater than or equal to 0.00")
     @DecimalMax(value = "1000.00", inclusive = false, message = "Price value must be less than 1000.00")
-    private BigDecimal value;
+    private BigDecimal amount;
 
     @NotNull(message = "Price currency must be not null")
     @Enumerated(EnumType.STRING)

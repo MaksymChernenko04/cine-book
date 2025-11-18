@@ -28,6 +28,9 @@ public class ScreeningSeat {
     @JoinColumn(name = "seat_id", nullable = false)
     private Seat seat;
 
+    @Embedded
+    private Price price;
+
     @NotNull(message = "Screening seat status must be not null")
     @Enumerated(EnumType.STRING)
     private Status status = Status.AVAILABLE;
@@ -40,6 +43,9 @@ public class ScreeningSeat {
     private Instant lockedAt;
 
     private Instant expiresAt;
+
+    @Version
+    private Long version;
 
     public enum Status {
         AVAILABLE,

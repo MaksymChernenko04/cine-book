@@ -22,6 +22,7 @@ public class Seat {
 
     @NotNull(message = "Seat row must be not null")
     @Min(value = 1, message = "Seat row must be a positive number")
+    @Column(name = "row_number")
     private Integer row;
 
     @NotNull(message = "Seat number must be not null")
@@ -31,9 +32,6 @@ public class Seat {
     @NotNull(message = "Seat type must be not null")
     @Enumerated(EnumType.STRING)
     private Type type;
-
-    @Embedded
-    private Price price;
 
     public enum Type {
         REGULAR,

@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
@@ -32,14 +33,14 @@ public class Movie {
     private Genre genre;
 
     @NotNull(message = "Movie duration must be not null")
-    @DecimalMin(value = "1", message = "Movie duration must be a positive number")
-    @DecimalMax(value = "600", message = "Movie duration can not be longer than 600 minutes")
+    @Min(value = 1, message = "Movie duration must be a positive number")
+    @Max(value = 600, message = "Movie duration can not be longer than 600 minutes")
     private Integer durationMinutes;
 
     @Digits(integer = 2, fraction = 1)
     @DecimalMin(value = "0.0", inclusive = false, message = "Movie rating must be a positive number")
-    @DecimalMax(value = "10.0", message = "Movie duration can not be more than 10.0")
-    private Double rating;
+    @DecimalMax(value = "10.0", message = "Movie rating can not be more than 10.0")
+    private BigDecimal rating;
 
     private LocalDate releaseDate;
 

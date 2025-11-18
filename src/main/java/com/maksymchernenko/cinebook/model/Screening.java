@@ -26,6 +26,6 @@ public class Screening {
     private LocalDateTime startTime;
 
     @NotNull(message = "Screening hall must be not null")
-    @ManyToOne(optional = false, cascade = CascadeType.PERSIST)
+    @ManyToOne(optional = false)
     private Hall hall;
 }

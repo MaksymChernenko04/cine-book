@@ -20,7 +20,7 @@ public class Booking {
     private Integer id;
 
     @NotNull(message = "Booking user must be not null")
-    @ManyToOne(optional = false, cascade = CascadeType.PERSIST)
+    @ManyToOne(optional = false)
     private User user;
 
     @NotNull(message = "Booking status must be not null")

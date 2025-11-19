@@ -44,7 +44,8 @@ public class Booking {
     @NotNull(message = "Booking totalPrice must be not null")
     private Price totalPrice;
 
-    @Embedded
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "payment_id")
     private Payment payment;
 
     public enum Status {

@@ -1,14 +1,13 @@
 package com.maksymchernenko.cinebook.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Embeddable
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -16,7 +15,10 @@ import java.time.LocalDateTime;
 @Builder
 public class Payment {
 
-    @NotNull(message = "Payment method must be not null")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
     @Enumerated(EnumType.STRING)
     private Method method;
 

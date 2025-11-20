@@ -4,76 +4,76 @@
   "title": "CinemaData",
   "type": "object",
   "properties": {
-    "CinemaData": {
+    "cinemaData": {
       "type": "object",
       "properties": {
-        "Movies": {
+        "movies": {
           "type": "array",
           "items": { "$ref": "#/$defs/Movie" }
         },
-        "Screenings": {
+        "screenings": {
           "type": "array",
           "items": { "$ref": "#/$defs/Screening" }
         },
-        "Bookings": {
+        "bookings": {
           "type": "array",
           "items": { "$ref": "#/$defs/Booking" }
         }
       },
-      "required": ["Movies", "Screenings", "Bookings"],
+      "required": ["movies", "screenings", "bookings"],
       "additionalProperties": false
     }
   },
-  "required": ["CinemaData"],
+  "required": ["cinemaData"],
   "$defs": {
     "Movie": {
       "type": "object",
       "properties": {
         "id": { "type": "integer", "minimum": 1 },
-        "Title": {
+        "movieTitle": {
           "type": "string",
           "minLength": 1,
           "maxLength": 100
         },
-        "Description": {
+        "movieDescription": {
           "type": "string",
           "minLength": 1,
           "maxLength": 1000
         },
-        "Genre": {
+        "genre": {
           "type": "string",
           "enum": ["SCI_FI", "ANIMATION", "DRAMA", "COMEDY", "ACTION", "CRIME", "HORROR"]
         },
-        "DurationMinutes": {
+        "durationMinutes": {
           "type": "integer",
           "minimum": 1,
           "maximum": 600
         },
-        "Rating": {
+        "rating": {
           "type": "number",
           "exclusiveMinimum": 0.0,
           "maximum": 10.0,
           "multipleOf": 0.1
         },
-        "ReleaseDate": { "type": "string", "format": "date" },
-        "PosterURL": {
+        "releaseDate": { "type": "string", "format": "date" },
+        "posterURL": {
           "type": "string",
           "pattern": "^https?://.+\\.(jpg|jpeg|png|JPG|JPEG|PNG)$",
           "maxLength": 250
         }
       },
-      "required": ["id", "Title", "Genre", "DurationMinutes"],
+      "required": ["id", "movieTitle", "genre", "durationMinutes"],
       "additionalProperties": false
     },
     "Screening": {
       "type": "object",
       "properties": {
         "id": { "type": "integer", "minimum": 1 },
-        "Movie": { "$ref": "#/$defs/Movie" },
-        "StartTime": { "type": "string", "format": "date-time" },
-        "Hall": { "$ref": "#/$defs/Hall" }
+        "movie": { "$ref": "#/$defs/Movie" },
+        "startTime": { "type": "string", "format": "date-time" },
+        "hall": { "$ref": "#/$defs/Hall" }
       },
-      "required": ["id", "Movie", "StartTime", "Hall"],
+      "required": ["id", "movie", "startTime", "hall"],
       "additionalProperties": false
     },
     "Hall": {
@@ -81,14 +81,14 @@
       "properties": {
         "id": { "type": "integer", "minimum": 1 },
         "accessibility": { "type": "boolean", "default": false },
-        "Name": { "type": "string" },
-        "Capacity": { "type": "integer", "minimum": 1 },
-        "Seats": {
+        "name": { "type": "string" },
+        "capacity": { "type": "integer", "minimum": 1 },
+        "seats": {
           "type": "array",
           "items": { "$ref": "#/$defs/Seat" }
         }
       },
-      "required": ["id", "Name", "Capacity", "Seats"],
+      "required": ["id", "name", "capacity", "seats"],
       "additionalProperties": false
     },
     "Seat": {
@@ -96,17 +96,20 @@
       "properties": {
         "id": { "type": "integer", "minimum": 1 },
         "hallId": { "type": "integer", "minimum": 1 },
-        "Row": { "type": "integer", "minimum": 1 },
-        "Number": { "type": "integer", "minimum": 1 },
-        "Type": { "type": "string", "enum": ["REGULAR", "VIP", "ACCESSIBLE"] },
-        "Status": { "type": "string", "enum": ["AVAILABLE", "LOCKED", "SOLD"] },
-        "Price": { "$ref": "#/$defs/Price" },
-        "LockToken": {
+        "row": { "type": "integer", "minimum": 1 },
+        "number": { "type": "integer", "minimum": 1 },
+        "seatType": {
+          "type": "string",
+          "enum": ["REGULAR", "VIP", "ACCESSIBLE"]
+        },
+        "status": { "type": "string", "enum": ["AVAILABLE", "LOCKED", "SOLD"] },
+        "price": { "$ref": "#/$defs/Price" },
+        "lockToken": {
           "type": "string",
           "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
         }
       },
-      "required": ["id", "hallId", "Row", "Number", "Type", "Status", "Price"],
+      "required": ["id", "hallId", "row", "number", "seatType", "status", "price"],
       "additionalProperties": false
     },
     "Price": {
@@ -129,31 +132,31 @@
     "User": {
       "type": "object",
       "properties": {
-        "Name": { "type": "string" },
-        "Email": {
+        "name": { "type": "string" },
+        "email": {
           "type": "string",
           "pattern": "^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[A-Za-z]{2,}$",
           "maxLength": 100
         }
       },
-      "required": ["Name", "Email"],
+      "required": ["name", "email"],
       "additionalProperties": false
     },
     "Payment": {
       "type": "object",
       "properties": {
-        "Method": { "type": "string", "enum": ["CARD", "CASH", "ONLINE"] },
-        "PaidAt": { "type": "string", "format": "date-time" },
-        "ExpectedRedirectURL": {
+        "method": { "type": "string", "enum": ["CARD", "CASH", "ONLINE"] },
+        "paidAt": { "type": "string", "format": "date-time" },
+        "expectedRedirectURL": {
           "type": "string",
           "pattern": "^https?://.+",
           "maxLength": 200
         }
       },
-      "required": ["Method"],
+      "required": ["method"],
       "oneOf": [
-        { "required": ["PaidAt"] },
-        { "required": ["ExpectedRedirectURL"] }
+        { "required": ["paidAt"] },
+        { "required": ["expectedRedirectURL"] }
       ],
       "additionalProperties": false
     },
@@ -161,17 +164,17 @@
       "type": "object",
       "properties": {
         "id": { "type": "integer", "minimum": 1 },
-        "User": { "$ref": "#/$defs/User" },
-        "BookingStatus": { "type": "string", "enum": ["PENDING", "CONFIRMED", "CANCELLED"] },
-        "Screening": { "$ref": "#/$defs/Screening" },
-        "BookedSeats": {
+        "user": { "$ref": "#/$defs/User" },
+        "bookingStatus": { "type": "string", "enum": ["PENDING", "CONFIRMED", "CANCELLED"] },
+        "screening": { "$ref": "#/$defs/Screening" },
+        "bookedSeats": {
           "type": "array",
           "items": { "$ref": "#/$defs/Seat" }
         },
-        "TotalPrice": { "$ref": "#/$defs/Price" },
-        "Payment": { "$ref": "#/$defs/Payment" }
+        "totalPrice": { "$ref": "#/$defs/Price" },
+        "payment": { "$ref": "#/$defs/Payment" }
       },
-      "required": ["id", "User", "BookingStatus", "Screening", "BookedSeats", "TotalPrice"],
+      "required": ["id", "user", "bookingStatus", "screening", "bookedSeats", "totalPrice"],
       "additionalProperties": false
     }
   }

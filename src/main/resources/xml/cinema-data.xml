@@ -4,258 +4,258 @@
          xmlns:cd="http://maksymchernenko.com/cine-book"
          xsi:schemaLocation="http://maksymchernenko.com/cine-book cinema-data.xsd">
 
-    <cd:Movies>
-        <cd:Movie id="1">
-            <cd:Title>The Matrix</cd:Title>
-            <cd:Description>Neo discovers the truth about the reality.</cd:Description>
-            <cd:Genre>SCI_FI</cd:Genre>
-            <cd:DurationMinutes>136</cd:DurationMinutes>
-            <cd:Rating>8.7</cd:Rating>
-            <cd:ReleaseDate>1999-03-31</cd:ReleaseDate>
-            <cd:PosterURL>https://upload.wikimedia.org/wikipedia/en/d/db/The_Matrix.png</cd:PosterURL>
-        </cd:Movie>
+    <cd:movies>
+        <cd:movie id="1">
+            <cd:title>The Matrix</cd:title>
+            <cd:description>Neo discovers the truth about the reality.</cd:description>
+            <cd:genre>SCI_FI</cd:genre>
+            <cd:durationMinutes>136</cd:durationMinutes>
+            <cd:rating>8.7</cd:rating>
+            <cd:releaseDate>1999-03-31</cd:releaseDate>
+            <cd:posterURL>https://upload.wikimedia.org/wikipedia/en/d/db/The_Matrix.png</cd:posterURL>
+        </cd:movie>
 
-        <cd:Movie id="2">
-            <cd:Title>Inside Out</cd:Title>
-            <cd:Description>Animated story about emotions in a young girl's mind.</cd:Description>
-            <cd:Genre>ANIMATION</cd:Genre>
-            <cd:DurationMinutes>95</cd:DurationMinutes>
-            <cd:Rating>8.1</cd:Rating>
-            <cd:ReleaseDate>2015-06-19</cd:ReleaseDate>
-            <cd:PosterURL>https://upload.wikimedia.org/wikipedia/en/0/0a/Inside_Out_%282015_film%29_poster.jpg</cd:PosterURL>
-        </cd:Movie>
+        <cd:movie id="2">
+            <cd:title>Inside Out</cd:title>
+            <cd:description>Animated story about emotions in a young girl's mind.</cd:description>
+            <cd:genre>ANIMATION</cd:genre>
+            <cd:durationMinutes>95</cd:durationMinutes>
+            <cd:rating>8.1</cd:rating>
+            <cd:releaseDate>2015-06-19</cd:releaseDate>
+            <cd:posterURL>https://upload.wikimedia.org/wikipedia/en/0/0a/Inside_Out_%282015_film%29_poster.jpg</cd:posterURL>
+        </cd:movie>
 
-        <cd:Movie id="3">
-            <cd:Title>Interstellar</cd:Title>
-            <cd:Description>Explorers travel through a wormhole in space.</cd:Description>
-            <cd:Genre>SCI_FI</cd:Genre>
-            <cd:DurationMinutes>169</cd:DurationMinutes>
-            <cd:Rating>8.6</cd:Rating>
-            <cd:ReleaseDate>2014-11-07</cd:ReleaseDate>
-            <cd:PosterURL>https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg</cd:PosterURL>
-        </cd:Movie>
-    </cd:Movies>
+        <cd:movie id="3">
+            <cd:title>Interstellar</cd:title>
+            <cd:description>Explorers travel through a wormhole in space.</cd:description>
+            <cd:genre>SCI_FI</cd:genre>
+            <cd:durationMinutes>169</cd:durationMinutes>
+            <cd:rating>8.6</cd:rating>
+            <cd:releaseDate>2014-11-07</cd:releaseDate>
+            <cd:posterURL>https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg</cd:posterURL>
+        </cd:movie>
+    </cd:movies>
 
-    <cd:Screenings>
-        <cd:Screening id="101">
-            <cd:Movie id="1">
-                <cd:Title>The Matrix</cd:Title>
-                <cd:Description>Neo discovers the truth about the reality.</cd:Description>
-                <cd:Genre>SCI_FI</cd:Genre>
-                <cd:DurationMinutes>136</cd:DurationMinutes>
-                <cd:Rating>8.7</cd:Rating>
-                <cd:ReleaseDate>1999-03-31</cd:ReleaseDate>
-                <cd:PosterURL>https://upload.wikimedia.org/wikipedia/en/d/db/The_Matrix.png</cd:PosterURL>
-            </cd:Movie>
+    <cd:screenings>
+        <cd:screening id="101">
+            <cd:movie id="1">
+                <cd:title>The Matrix</cd:title>
+                <cd:description>Neo discovers the truth about the reality.</cd:description>
+                <cd:genre>SCI_FI</cd:genre>
+                <cd:durationMinutes>136</cd:durationMinutes>
+                <cd:rating>8.7</cd:rating>
+                <cd:releaseDate>1999-03-31</cd:releaseDate>
+                <cd:posterURL>https://upload.wikimedia.org/wikipedia/en/d/db/The_Matrix.png</cd:posterURL>
+            </cd:movie>
 
-            <cd:StartTime>2025-10-01T18:30:00</cd:StartTime>
+            <cd:startTime>2025-10-01T18:30:00</cd:startTime>
 
-            <cd:Hall id="1">
-                <cd:Name>Main Hall</cd:Name>
-                <cd:Capacity>120</cd:Capacity>
-                <cd:Seats>
-                    <cd:Seat id="11" hallId="1">
-                        <cd:Row>1</cd:Row>
-                        <cd:Number>1</cd:Number>
-                        <cd:Type>REGULAR</cd:Type>
-                        <cd:Price currency="UAH">
-                            <cd:Amount>120</cd:Amount>
-                        </cd:Price>
-                        <cd:Status>AVAILABLE</cd:Status>
-                    </cd:Seat>
-                    <cd:Seat id="12" hallId="1">
-                        <cd:Row>6</cd:Row>
-                        <cd:Number>2</cd:Number>
-                        <cd:Type>VIP</cd:Type>
-                        <cd:Status>LOCKED</cd:Status>
-                        <cd:Price currency="PLN">
-                            <cd:Amount>29.99</cd:Amount>
-                        </cd:Price>
-                        <cd:LockToken>6768203b-3f27-4f59-b1a0-3a9fc8bf0b70</cd:LockToken>
-                    </cd:Seat>
-                    <cd:Seat id="13" hallId="1">
-                        <cd:Row>3</cd:Row>
-                        <cd:Number>1</cd:Number>
-                        <cd:Type>REGULAR</cd:Type>
-                        <cd:Price currency="EUR">
-                            <cd:Amount>3.49</cd:Amount>
-                        </cd:Price>
-                        <cd:Status>SOLD</cd:Status>
-                    </cd:Seat>
-                </cd:Seats>
-            </cd:Hall>
-        </cd:Screening>
+            <cd:hall id="1">
+                <cd:name>Main Hall</cd:name>
+                <cd:capacity>120</cd:capacity>
+                <cd:seats>
+                    <cd:seat id="11" hallId="1">
+                        <cd:row>1</cd:row>
+                        <cd:number>1</cd:number>
+                        <cd:type>REGULAR</cd:type>
+                        <cd:price currency="UAH">
+                            <cd:amount>120</cd:amount>
+                        </cd:price>
+                        <cd:status>AVAILABLE</cd:status>
+                    </cd:seat>
+                    <cd:seat id="12" hallId="1">
+                        <cd:row>6</cd:row>
+                        <cd:number>2</cd:number>
+                        <cd:type>VIP</cd:type>
+                        <cd:status>LOCKED</cd:status>
+                        <cd:price currency="PLN">
+                            <cd:amount>29.99</cd:amount>
+                        </cd:price>
+                        <cd:lockToken>6768203b-3f27-4f59-b1a0-3a9fc8bf0b70</cd:lockToken>
+                    </cd:seat>
+                    <cd:seat id="13" hallId="1">
+                        <cd:row>3</cd:row>
+                        <cd:number>1</cd:number>
+                        <cd:type>REGULAR</cd:type>
+                        <cd:price currency="EUR">
+                            <cd:amount>3.49</cd:amount>
+                        </cd:price>
+                        <cd:status>SOLD</cd:status>
+                    </cd:seat>
+                </cd:seats>
+            </cd:hall>
+        </cd:screening>
 
-        <cd:Screening id="102">
-            <cd:Movie id="3">
-                <cd:Title>Interstellar</cd:Title>
-                <cd:Description>Explorers travel through a wormhole in space.</cd:Description>
-                <cd:Genre>SCI_FI</cd:Genre>
-                <cd:DurationMinutes>169</cd:DurationMinutes>
-                <cd:Rating>8.6</cd:Rating>
-                <cd:ReleaseDate>2014-11-07</cd:ReleaseDate>
-                <cd:PosterURL>https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg</cd:PosterURL>
-            </cd:Movie>
+        <cd:screening id="102">
+            <cd:movie id="3">
+                <cd:title>Interstellar</cd:title>
+                <cd:description>Explorers travel through a wormhole in space.</cd:description>
+                <cd:genre>SCI_FI</cd:genre>
+                <cd:durationMinutes>169</cd:durationMinutes>
+                <cd:rating>8.6</cd:rating>
+                <cd:releaseDate>2014-11-07</cd:releaseDate>
+                <cd:posterURL>https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg</cd:posterURL>
+            </cd:movie>
 
-            <cd:StartTime>2025-10-01T15:00:00</cd:StartTime>
+            <cd:startTime>2025-10-01T15:00:00</cd:startTime>
 
-            <cd:Hall id="2" accessibility="true">
-                <cd:Name>Small Hall</cd:Name>
-                <cd:Capacity>40</cd:Capacity>
-                <cd:Seats>
-                    <cd:Seat id="50" hallId="2">
-                        <cd:Row>1</cd:Row>
-                        <cd:Number>1</cd:Number>
-                        <cd:Type>ACCESSIBLE</cd:Type>
-                        <cd:Price currency="UAH">
-                            <cd:Amount>60</cd:Amount>
-                        </cd:Price>
-                        <cd:Status>AVAILABLE</cd:Status>
-                    </cd:Seat>
-                </cd:Seats>
-            </cd:Hall>
-        </cd:Screening>
-    </cd:Screenings>
+            <cd:hall id="2" accessibility="true">
+                <cd:name>Small Hall</cd:name>
+                <cd:capacity>40</cd:capacity>
+                <cd:seats>
+                    <cd:seat id="50" hallId="2">
+                        <cd:row>1</cd:row>
+                        <cd:number>1</cd:number>
+                        <cd:type>ACCESSIBLE</cd:type>
+                        <cd:price currency="UAH">
+                            <cd:amount>60</cd:amount>
+                        </cd:price>
+                        <cd:status>AVAILABLE</cd:status>
+                    </cd:seat>
+                </cd:seats>
+            </cd:hall>
+        </cd:screening>
+    </cd:screenings>
 
-    <cd:Bookings>
-        <cd:Booking id="1001">
-            <cd:User>
-                <cd:Name>Ivan Petrov</cd:Name>
-                <cd:Email>ivan.petrov@example.com</cd:Email>
-            </cd:User>
+    <cd:bookings>
+        <cd:booking id="1001">
+            <cd:user>
+                <cd:name>Ivan Petrov</cd:name>
+                <cd:email>ivan.petrov@example.com</cd:email>
+            </cd:user>
 
-            <cd:BookingStatus>CONFIRMED</cd:BookingStatus>
+            <cd:bookingStatus>CONFIRMED</cd:bookingStatus>
 
-            <cd:Screening id="102">
-                <cd:Movie id="3">
-                    <cd:Title>Interstellar</cd:Title>
-                    <cd:Description>Explorers travel through a wormhole in space.</cd:Description>
-                    <cd:Genre>SCI_FI</cd:Genre>
-                    <cd:DurationMinutes>169</cd:DurationMinutes>
-                    <cd:Rating>8.6</cd:Rating>
-                    <cd:ReleaseDate>2014-11-07</cd:ReleaseDate>
-                    <cd:PosterURL>https://maksymchernenko.com/cine-book/posters/interstellar.jpeg</cd:PosterURL>
-                </cd:Movie>
+            <cd:screening id="102">
+                <cd:movie id="3">
+                    <cd:title>Interstellar</cd:title>
+                    <cd:description>Explorers travel through a wormhole in space.</cd:description>
+                    <cd:genre>SCI_FI</cd:genre>
+                    <cd:durationMinutes>169</cd:durationMinutes>
+                    <cd:rating>8.6</cd:rating>
+                    <cd:releaseDate>2014-11-07</cd:releaseDate>
+                    <cd:posterURL>https://maksymchernenko.com/cine-book/posters/interstellar.jpeg</cd:posterURL>
+                </cd:movie>
 
-                <cd:StartTime>2025-10-01T15:00:00</cd:StartTime>
+                <cd:startTime>2025-10-01T15:00:00</cd:startTime>
 
-                <cd:Hall id="2" accessibility="true">
-                    <cd:Name>Small Hall</cd:Name>
-                    <cd:Capacity>40</cd:Capacity>
-                    <cd:Seats>
-                        <cd:Seat id="50" hallId="2">
-                            <cd:Row>1</cd:Row>
-                            <cd:Number>1</cd:Number>
-                            <cd:Type>ACCESSIBLE</cd:Type>
-                            <cd:Price currency="UAH">
-                                <cd:Amount>60</cd:Amount>
-                            </cd:Price>
-                            <cd:Status>AVAILABLE</cd:Status>
-                        </cd:Seat>
-                    </cd:Seats>
-                </cd:Hall>
-            </cd:Screening>
+                <cd:hall id="2" accessibility="true">
+                    <cd:name>Small Hall</cd:name>
+                    <cd:capacity>40</cd:capacity>
+                    <cd:seats>
+                        <cd:seat id="50" hallId="2">
+                            <cd:row>1</cd:row>
+                            <cd:number>1</cd:number>
+                            <cd:type>ACCESSIBLE</cd:type>
+                            <cd:price currency="UAH">
+                                <cd:amount>60</cd:amount>
+                            </cd:price>
+                            <cd:status>AVAILABLE</cd:status>
+                        </cd:seat>
+                    </cd:seats>
+                </cd:hall>
+            </cd:screening>
 
-            <cd:BookedSeats>
-                <cd:Seat id="50" hallId="2">
-                    <cd:Row>1</cd:Row>
-                    <cd:Number>1</cd:Number>
-                    <cd:Type>ACCESSIBLE</cd:Type>
-                    <cd:Price currency="PLN">
-                        <cd:Amount>29.50</cd:Amount>
-                    </cd:Price>
-                    <cd:Status>SOLD</cd:Status>
-                </cd:Seat>
-            </cd:BookedSeats>
+            <cd:bookedSeats>
+                <cd:seat id="50" hallId="2">
+                    <cd:row>1</cd:row>
+                    <cd:number>1</cd:number>
+                    <cd:type>ACCESSIBLE</cd:type>
+                    <cd:price currency="PLN">
+                        <cd:amount>29.50</cd:amount>
+                    </cd:price>
+                    <cd:status>SOLD</cd:status>
+                </cd:seat>
+            </cd:bookedSeats>
 
-            <cd:TotalPrice currency="PLN">
-                <cd:Amount>29.50</cd:Amount>
-            </cd:TotalPrice>
+            <cd:totalPrice currency="PLN">
+                <cd:amount>29.50</cd:amount>
+            </cd:totalPrice>
 
-            <cd:Payment>
-                <cd:Method>CARD</cd:Method>
-                <cd:PaidAt>2025-09-20T10:12:00</cd:PaidAt>
-            </cd:Payment>
-        </cd:Booking>
+            <cd:payment>
+                <cd:method>CARD</cd:method>
+                <cd:paidAt>2025-09-20T10:12:00</cd:paidAt>
+            </cd:payment>
+        </cd:booking>
 
-        <cd:Booking id="1002">
-            <cd:User>
-                <cd:Name>Maria Kovalenko</cd:Name>
-                <cd:Email>maria.k@example.com</cd:Email>
-            </cd:User>
+        <cd:booking id="1002">
+            <cd:user>
+                <cd:name>Maria Kovalenko</cd:name>
+                <cd:email>maria.k@example.com</cd:email>
+            </cd:user>
 
-            <cd:BookingStatus>PENDING</cd:BookingStatus>
+            <cd:bookingStatus>PENDING</cd:bookingStatus>
 
-            <cd:Screening id="101">
-                <cd:Movie id="1">
-                    <cd:Title>The Matrix</cd:Title>
-                    <cd:Description>Neo discovers the truth about the reality.</cd:Description>
-                    <cd:Genre>SCI_FI</cd:Genre>
-                    <cd:DurationMinutes>136</cd:DurationMinutes>
-                    <cd:Rating>8.7</cd:Rating>
-                    <cd:ReleaseDate>1999-03-31</cd:ReleaseDate>
-                    <cd:PosterURL>https://maksymchernenko.com/cine-book/posters/matrix.png</cd:PosterURL>
-                </cd:Movie>
+            <cd:screening id="101">
+                <cd:movie id="1">
+                    <cd:title>The Matrix</cd:title>
+                    <cd:description>Neo discovers the truth about the reality.</cd:description>
+                    <cd:genre>SCI_FI</cd:genre>
+                    <cd:durationMinutes>136</cd:durationMinutes>
+                    <cd:rating>8.7</cd:rating>
+                    <cd:releaseDate>1999-03-31</cd:releaseDate>
+                    <cd:posterURL>https://maksymchernenko.com/cine-book/posters/matrix.png</cd:posterURL>
+                </cd:movie>
 
-                <cd:StartTime>2025-10-01T18:30:00</cd:StartTime>
+                <cd:startTime>2025-10-01T18:30:00</cd:startTime>
 
-                <cd:Hall id="1">
-                    <cd:Name>Main Hall</cd:Name>
-                    <cd:Capacity>120</cd:Capacity>
-                    <cd:Seats>
-                        <cd:Seat id="11" hallId="1">
-                            <cd:Row>1</cd:Row>
-                            <cd:Number>1</cd:Number>
-                            <cd:Type>REGULAR</cd:Type>
-                            <cd:Price currency="USD">
-                                <cd:Amount>5</cd:Amount>
-                            </cd:Price>
-                            <cd:Status>AVAILABLE</cd:Status>
-                        </cd:Seat>
-                        <cd:Seat id="12" hallId="1">
-                            <cd:Row>6</cd:Row>
-                            <cd:Number>2</cd:Number>
-                            <cd:Type>VIP</cd:Type>
-                            <cd:Status>LOCKED</cd:Status>
-                            <cd:Price currency="UAH">
-                                <cd:Amount>300</cd:Amount>
-                            </cd:Price>
-                            <cd:LockToken>5d6ac655-0871-4913-871d-ce27683a9e9f</cd:LockToken>
-                        </cd:Seat>
-                        <cd:Seat id="13" hallId="1">
-                            <cd:Row>3</cd:Row>
-                            <cd:Number>1</cd:Number>
-                            <cd:Type>REGULAR</cd:Type>
-                            <cd:Price currency="UAH">
-                                <cd:Amount>150</cd:Amount>
-                            </cd:Price>
-                            <cd:Status>SOLD</cd:Status>
-                        </cd:Seat>
-                    </cd:Seats>
-                </cd:Hall>
-            </cd:Screening>
+                <cd:hall id="1">
+                    <cd:name>Main Hall</cd:name>
+                    <cd:capacity>120</cd:capacity>
+                    <cd:seats>
+                        <cd:seat id="11" hallId="1">
+                            <cd:row>1</cd:row>
+                            <cd:number>1</cd:number>
+                            <cd:type>REGULAR</cd:type>
+                            <cd:price currency="USD">
+                                <cd:amount>5</cd:amount>
+                            </cd:price>
+                            <cd:status>AVAILABLE</cd:status>
+                        </cd:seat>
+                        <cd:seat id="12" hallId="1">
+                            <cd:row>6</cd:row>
+                            <cd:number>2</cd:number>
+                            <cd:type>VIP</cd:type>
+                            <cd:status>LOCKED</cd:status>
+                            <cd:price currency="UAH">
+                                <cd:amount>300</cd:amount>
+                            </cd:price>
+                            <cd:lockToken>5d6ac655-0871-4913-871d-ce27683a9e9f</cd:lockToken>
+                        </cd:seat>
+                        <cd:seat id="13" hallId="1">
+                            <cd:row>3</cd:row>
+                            <cd:number>1</cd:number>
+                            <cd:type>REGULAR</cd:type>
+                            <cd:price currency="UAH">
+                                <cd:amount>150</cd:amount>
+                            </cd:price>
+                            <cd:status>SOLD</cd:status>
+                        </cd:seat>
+                    </cd:seats>
+                </cd:hall>
+            </cd:screening>
 
-            <cd:BookedSeats>
-                <cd:Seat id="65" hallId="1">
-                    <cd:Row>5</cd:Row>
-                    <cd:Number>12</cd:Number>
-                    <cd:Type>REGULAR</cd:Type>
-                    <cd:Price currency="EUR">
-                        <cd:Amount>2.99</cd:Amount>
-                    </cd:Price>
-                    <cd:Status>SOLD</cd:Status>
-                </cd:Seat>
-            </cd:BookedSeats>
+            <cd:bookedSeats>
+                <cd:seat id="65" hallId="1">
+                    <cd:row>5</cd:row>
+                    <cd:number>12</cd:number>
+                    <cd:type>REGULAR</cd:type>
+                    <cd:price currency="EUR">
+                        <cd:amount>2.99</cd:amount>
+                    </cd:price>
+                    <cd:status>SOLD</cd:status>
+                </cd:seat>
+            </cd:bookedSeats>
 
-            <cd:TotalPrice currency="EUR">
-                <cd:Amount>2.99</cd:Amount>
-            </cd:TotalPrice>
+            <cd:totalPrice currency="EUR">
+                <cd:amount>2.99</cd:amount>
+            </cd:totalPrice>
 
-            <cd:Payment>
-                <cd:Method>ONLINE</cd:Method>
-                <cd:ExpectedRedirectURL>https://pay.example.com/session/xyz</cd:ExpectedRedirectURL>
-            </cd:Payment>
-        </cd:Booking>
-    </cd:Bookings>
+            <cd:payment>
+                <cd:method>ONLINE</cd:method>
+                <cd:expectedRedirectURL>https://pay.example.com/session/xyz</cd:expectedRedirectURL>
+            </cd:payment>
+        </cd:booking>
+    </cd:bookings>
 
 </cd:CinemaData>

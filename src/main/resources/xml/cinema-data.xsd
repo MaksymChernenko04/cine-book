@@ -89,7 +89,7 @@
 
     <xsd:complexType name="Price">
         <xsd:sequence>
-            <xsd:element name="Amount" type="cd:PriceValue"/>
+            <xsd:element name="amount" type="cd:PriceValue"/>
         </xsd:sequence>
         <xsd:attribute name="currency" type="cd:Currency" use="required"/>
     </xsd:complexType>
@@ -149,13 +149,13 @@
     <!-- Movie Type -->
     <xsd:complexType name="Movie">
         <xsd:sequence>
-            <xsd:element name="Title" type="cd:Title"/>
-            <xsd:element name="Description" type="cd:Description" minOccurs="0"/>
-            <xsd:element name="Genre" type="cd:Genre"/>
-            <xsd:element name="DurationMinutes" type="cd:Duration"/>
-            <xsd:element name="Rating" type="cd:Rating" minOccurs="0"/>
-            <xsd:element name="ReleaseDate" type="xsd:date" minOccurs="0"/>
-            <xsd:element name="PosterURL" type="cd:ImageURL" minOccurs="0"/>
+            <xsd:element name="title" type="cd:Title"/>
+            <xsd:element name="description" type="cd:Description" minOccurs="0"/>
+            <xsd:element name="genre" type="cd:Genre"/>
+            <xsd:element name="durationMinutes" type="cd:Duration"/>
+            <xsd:element name="rating" type="cd:Rating" minOccurs="0"/>
+            <xsd:element name="releaseDate" type="xsd:date" minOccurs="0"/>
+            <xsd:element name="posterURL" type="cd:ImageURL" minOccurs="0"/>
         </xsd:sequence>
         <xsd:attribute name="id" type="xsd:positiveInteger" use="required"/>
     </xsd:complexType>
@@ -163,9 +163,9 @@
     <!-- Screening Type -->
     <xsd:complexType name="Screening">
         <xsd:sequence>
-            <xsd:element name="Movie" type="cd:Movie"/>
-            <xsd:element name="StartTime" type="xsd:dateTime"/>
-            <xsd:element name="Hall" type="cd:Hall"/>
+            <xsd:element name="movie" type="cd:Movie"/>
+            <xsd:element name="startTime" type="xsd:dateTime"/>
+            <xsd:element name="hall" type="cd:Hall"/>
         </xsd:sequence>
         <xsd:attribute name="id" type="xsd:positiveInteger" use="required"/>
     </xsd:complexType>
@@ -173,12 +173,12 @@
     <!-- Hall Type -->
     <xsd:complexType name="Hall">
         <xsd:sequence>
-            <xsd:element name="Name" type="xsd:string"/>
-            <xsd:element name="Capacity" type="xsd:positiveInteger"/>
-            <xsd:element name="Seats">
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="capacity" type="xsd:positiveInteger"/>
+            <xsd:element name="seats">
                 <xsd:complexType>
                     <xsd:sequence>
-                        <xsd:element name="Seat" type="cd:Seat" maxOccurs="unbounded"/>
+                        <xsd:element name="seat" type="cd:Seat" maxOccurs="unbounded"/>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
@@ -190,12 +190,12 @@
     <!-- Seat Type -->
     <xsd:complexType name="Seat">
         <xsd:all>
-            <xsd:element name="Row" type="xsd:positiveInteger"/>
-            <xsd:element name="Number" type="xsd:positiveInteger"/>
-            <xsd:element name="Type" type="cd:SeatType"/>
-            <xsd:element name="Status" type="cd:SeatStatus"/>
-            <xsd:element name="Price" type="cd:Price"/>
-            <xsd:element name="LockToken" type="cd:Token" minOccurs="0"/>
+            <xsd:element name="row" type="xsd:positiveInteger"/>
+            <xsd:element name="number" type="xsd:positiveInteger"/>
+            <xsd:element name="type" type="cd:SeatType"/>
+            <xsd:element name="status" type="cd:SeatStatus"/>
+            <xsd:element name="price" type="cd:Price"/>
+            <xsd:element name="lockToken" type="cd:Token" minOccurs="0"/>
         </xsd:all>
         <xsd:attribute name="id" type="xsd:positiveInteger" use="required"/>
         <xsd:attribute name="hallId" type="xsd:positiveInteger" use="required"/>
@@ -204,18 +204,18 @@
     <!-- User Type -->
     <xsd:complexType name="User">
         <xsd:all>
-            <xsd:element name="Name" type="xsd:string"/>
-            <xsd:element name="Email" type="cd:Email"/>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="email" type="cd:Email"/>
         </xsd:all>
     </xsd:complexType>
 
     <!-- Payment Type -->
     <xsd:complexType name="Payment">
         <xsd:sequence>
-            <xsd:element name="Method" type="cd:PaymentMethod"/>
+            <xsd:element name="method" type="cd:PaymentMethod"/>
             <xsd:choice>
-                <xsd:element name="PaidAt" type="xsd:dateTime"/>
-                <xsd:element name="ExpectedRedirectURL" type="cd:URL"/>
+                <xsd:element name="paidAt" type="xsd:dateTime"/>
+                <xsd:element name="expectedRedirectURL" type="cd:URL"/>
             </xsd:choice>
         </xsd:sequence>
     </xsd:complexType>
@@ -223,18 +223,18 @@
     <!-- Booking Type -->
     <xsd:complexType name="Booking">
         <xsd:sequence>
-            <xsd:element name="User" type="cd:User"/>
-            <xsd:element name="BookingStatus" type="cd:BookingStatus"/>
-            <xsd:element name="Screening" type="cd:Screening"/>
-            <xsd:element name="BookedSeats">
+            <xsd:element name="user" type="cd:User"/>
+            <xsd:element name="bookingStatus" type="cd:BookingStatus"/>
+            <xsd:element name="screening" type="cd:Screening"/>
+            <xsd:element name="bookedSeats">
                 <xsd:complexType>
                     <xsd:sequence>
-                        <xsd:element name="Seat" type="cd:Seat" maxOccurs="unbounded"/>
+                        <xsd:element name="seat" type="cd:Seat" maxOccurs="unbounded"/>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
-            <xsd:element name="TotalPrice" type="cd:Price"/>
-            <xsd:element name="Payment" type="cd:Payment" minOccurs="0"/>
+            <xsd:element name="totalPrice" type="cd:Price"/>
+            <xsd:element name="payment" type="cd:Payment" minOccurs="0"/>
         </xsd:sequence>
         <xsd:attribute name="id" type="xsd:positiveInteger" use="required"/>
     </xsd:complexType>
@@ -243,26 +243,26 @@
     <xsd:element name="CinemaData">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="Movies">
+                <xsd:element name="movies">
                     <xsd:complexType>
                         <xsd:sequence>
-                            <xsd:element name="Movie" type="cd:Movie" minOccurs="0" maxOccurs="unbounded"/>
+                            <xsd:element name="movie" type="cd:Movie" minOccurs="0" maxOccurs="unbounded"/>
                         </xsd:sequence>
                     </xsd:complexType>
                 </xsd:element>
 
-                <xsd:element name="Screenings">
+                <xsd:element name="screenings">
                     <xsd:complexType>
                         <xsd:sequence>
-                            <xsd:element name="Screening" type="cd:Screening" minOccurs="0" maxOccurs="unbounded"/>
+                            <xsd:element name="screening" type="cd:Screening" minOccurs="0" maxOccurs="unbounded"/>
                         </xsd:sequence>
                     </xsd:complexType>
                 </xsd:element>
 
-                <xsd:element name="Bookings">
+                <xsd:element name="bookings">
                     <xsd:complexType>
                         <xsd:sequence>
-                            <xsd:element name="Booking" type="cd:Booking" minOccurs="0" maxOccurs="unbounded"/>
+                            <xsd:element name="booking" type="cd:Booking" minOccurs="0" maxOccurs="unbounded"/>
                         </xsd:sequence>
                     </xsd:complexType>
                 </xsd:element>

@@ -1,5 +1,6 @@
 package com.maksymchernenko.cinebook.dto;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import com.maksymchernenko.cinebook.model.Movie;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +10,7 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@JacksonXmlRootElement(localName = "movie")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

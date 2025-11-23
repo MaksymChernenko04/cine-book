@@ -26,8 +26,6 @@ public class ScreeningController {
         this.screeningService = screeningService;
     }
 
-    // Screening endpoints
-
     @GetMapping
     public Page<ScreeningResponse> getAllScreenings(Pageable pageable,
                                                     @RequestParam(required = false) Integer screeningId,

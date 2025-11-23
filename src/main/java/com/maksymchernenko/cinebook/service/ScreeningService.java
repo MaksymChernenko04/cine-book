@@ -38,9 +38,9 @@ public interface ScreeningService {
 
     void deleteHallById(Integer id);
 
-    Hall addSeatByHallId(Integer hallId, Seat seat);
+    Hall addSeatByHallId(Integer hallId, Integer seatId);
 
-    Hall removeSeatByHallId(Integer hallId, Seat seat);
+    void removeSeatByHallId(Integer hallId, Integer seatId);
 
     List<Seat> getSeatsByHallId(Integer hallId);
 

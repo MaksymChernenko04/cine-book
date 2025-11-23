@@ -170,9 +170,11 @@ public class ScreeningServiceImpl implements ScreeningService {
 
     @Override
     @Transactional
-    public Hall addSeatByHallId(Integer hallId, Seat seat) {
+    public Hall addSeatByHallId(Integer hallId, Integer seatId) {
         Hall hall = hallRepository.findById(hallId)
                 .orElseThrow(() -> new NotFoundException(String.format("Hall with id = %d not found", hallId)));
+        Seat seat = seatRepository.findById(seatId)
+                .orElseThrow(() -> new NotFoundException(String.format("Seat with id = %d not found", hallId)));
 
         hall.getSeats().add(seat);
 
@@ -181,13 +183,15 @@ public class ScreeningServiceImpl implements ScreeningService {
 
     @Override
     @Transactional
-    public Hall removeSeatByHallId(Integer hallId, Seat seat) {
+    public void removeSeatByHallId(Integer hallId, Integer seatId) {
         Hall hall = hallRepository.findById(hallId)
                 .orElseThrow(() -> new NotFoundException(String.format("Hall with id = %d not found", hallId)));
+        Seat seat = seatRepository.findById(seatId)
+                .orElseThrow(() -> new NotFoundException(String.format("Seat with id = %d not found", hallId)));
 
         hall.getSeats().remove(seat);
 
-        return hallRepository.save(hall);
+        hallRepository.save(hall);
     }
 
     // Seat API

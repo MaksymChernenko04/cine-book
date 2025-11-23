@@ -3,7 +3,6 @@ package com.maksymchernenko.cinebook.service.impl;
 import com.maksymchernenko.cinebook.exception.NotFoundException;
 import com.maksymchernenko.cinebook.model.*;
 import com.maksymchernenko.cinebook.repository.BookingRepository;
-import com.maksymchernenko.cinebook.repository.ScreeningRepository;
 import com.maksymchernenko.cinebook.repository.UserRepository;
 import com.maksymchernenko.cinebook.service.BookingService;
 import com.maksymchernenko.cinebook.service.PaymentService;
@@ -22,7 +21,6 @@ public class BookingServiceImpl implements BookingService {
 
     private final BookingRepository bookingRepository;
     private final UserRepository userRepository;
-    private final ScreeningRepository screeningRepository;
 
     private final ScreeningService screeningService;
     private final PaymentService paymentService;
@@ -30,12 +28,10 @@ public class BookingServiceImpl implements BookingService {
     @Autowired
     public BookingServiceImpl(BookingRepository bookingRepository,
                               UserRepository userRepository,
-                              ScreeningRepository screeningRepository,
                               ScreeningService screeningService,
                               PaymentService paymentService) {
         this.bookingRepository = bookingRepository;
         this.userRepository = userRepository;
-        this.screeningRepository = screeningRepository;
 
         this.screeningService = screeningService;
         this.paymentService = paymentService;
@@ -62,8 +58,7 @@ public class BookingServiceImpl implements BookingService {
     public Booking createBooking(Integer userId, Integer screeningId, List<Integer> seatIds) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new NotFoundException(String.format("User with id = %d not found", userId)));
-        Screening screening = screeningRepository.findById(screeningId)
-                .orElseThrow(() -> new NotFoundException(String.format("Screening with id = %d not found", screeningId)));
+        Screening screening = screeningService.getScreeningById(screeningId);
 
         String lockToken = screeningService.lockSeats(screeningId, seatIds);
         List<ScreeningSeat> seats = screeningService.getSeatsByScreeningAndLockToken(screeningId, lockToken);

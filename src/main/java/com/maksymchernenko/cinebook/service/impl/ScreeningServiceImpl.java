@@ -74,10 +74,15 @@ public class ScreeningServiceImpl implements ScreeningService {
     @Override
     @Transactional
     public Screening createScreening(Screening screening) {
+        if (screening.getMovie() == null || screening.getMovie().getId() == null) {
+            throw new IllegalArgumentException("Screening must contain a movie with id");
+        }
+
         if (screening.getHall() == null || screening.getHall().getId() == null) {
             throw new IllegalArgumentException("Screening must contain a hall with id");
         }
 
+        Movie movie = movieService.getMovieById(screening.getMovie().getId());
         Hall hall = hallRepository.findById(screening.getHall().getId())
                 .orElseThrow(() -> new NotFoundException(String.format("Hall with id = %d not found", screening.getHall().getId())));
 
@@ -87,6 +92,7 @@ public class ScreeningServiceImpl implements ScreeningService {
         }
 
         screening.setId(null);
+        screening.setMovie(movie);
         screening.setHall(hall);
 
         Screening saved = screeningRepository.save(screening);
@@ -115,7 +121,28 @@ public class ScreeningServiceImpl implements ScreeningService {
     @Override
     @Transactional
     public Screening updateScreening(Screening screening) {
-        return screeningRepository.save(screening);
+        if (screening.getId() == null) {
+            throw new IllegalArgumentException("Screening id must be provided for update");
+        }
+        Screening existing = screeningRepository.findById(screening.getId())
+                .orElseThrow(() -> new NotFoundException(String.format("Screening with id = %d not found", screening.getId())));
+
+        if (screening.getMovie() != null && screening.getMovie().getId() != null) {
+            Movie movie = movieService.getMovieById(screening.getMovie().getId());
+            existing.setMovie(movie);
+        }
+
+        if (screening.getHall() != null && screening.getHall().getId() != null) {
+            Hall hall = hallRepository.findById(screening.getHall().getId())
+                    .orElseThrow(() -> new NotFoundException(String.format("Hall with id = %d not found", screening.getHall().getId())));
+            existing.setHall(hall);
+        }
+
+        if (screening.getStartTime() != null) {
+            existing.setStartTime(screening.getStartTime());
+        }
+
+        return screeningRepository.save(existing);
     }
 
     @Override
@@ -212,7 +239,17 @@ public class ScreeningServiceImpl implements ScreeningService {
     @Override
     @Transactional
     public Seat createSeat(Seat seat) {
+        if (seat == null) throw new IllegalArgumentException("Seat must not be null");
+        if (seat.getHall() == null || seat.getHall().getId() == null) {
+            throw new IllegalArgumentException("Seat must contain hallId");
+        }
+
+        Integer hallId = seat.getHall().getId();
+        Hall hall = hallRepository.findById(hallId)
+                .orElseThrow(() -> new NotFoundException(String.format("Hall with id = %d not found", hallId)));
+
         seat.setId(null);
+        seat.setHall(hall);
 
         return seatRepository.save(seat);
     }

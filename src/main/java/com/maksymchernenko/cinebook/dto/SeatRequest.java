@@ -14,6 +14,9 @@ import lombok.NoArgsConstructor;
 @Builder
 public class SeatRequest {
 
+    @NotNull(message = "Hall id must be not null")
+    private Integer hallId;
+
     @NotNull(message = "Seat row must be not null")
     @Min(value = 1, message = "Seat row must be a positive number")
     private Integer row;

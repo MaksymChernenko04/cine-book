@@ -2,6 +2,7 @@ package com.maksymchernenko.cinebook.controller;
 
 import com.maksymchernenko.cinebook.dto.SeatRequest;
 import com.maksymchernenko.cinebook.dto.SeatResponse;
+import com.maksymchernenko.cinebook.model.Hall;
 import com.maksymchernenko.cinebook.model.Seat;
 import com.maksymchernenko.cinebook.service.ScreeningService;
 import jakarta.validation.Valid;
@@ -34,14 +35,19 @@ public class SeatController {
     @PostMapping(consumes = {"application/json", "application/xml"})
     public ResponseEntity<SeatResponse> createSeat(@Valid @RequestBody SeatRequest seatRequest) {
         Seat seat = SeatRequest.toEntity(seatRequest);
-        SeatResponse saved = SeatResponse.fromEntity(screeningService.createSeat(seat));
+        seat.setHall(com.maksymchernenko.cinebook.model.Hall.builder()
+                .id(seatRequest.getHallId())
+                .build());
+
+        Seat savedSeat = screeningService.createSeat(seat);
+        SeatResponse response = SeatResponse.fromEntity(savedSeat);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
-                .buildAndExpand(saved.getId())
+                .buildAndExpand(response.getId())
                 .toUri();
 
-        return ResponseEntity.created(location).body(saved);
+        return ResponseEntity.created(location).body(response);
     }
 
     @PutMapping(value = "/{id}", consumes = {"application/json", "application/xml"})
@@ -49,6 +55,10 @@ public class SeatController {
                                                    @Valid @RequestBody SeatRequest seatRequest) {
         Seat seat = SeatRequest.toEntity(seatRequest);
         seat.setId(id);
+
+        if (seatRequest.getHallId() != null) {
+            seat.setHall(Hall.builder().id(seatRequest.getHallId()).build());
+        }
 
         Seat saved = screeningService.updateSeat(seat);
 

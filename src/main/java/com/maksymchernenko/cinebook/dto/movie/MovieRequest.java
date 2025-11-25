@@ -1,4 +1,4 @@
-package com.maksymchernenko.cinebook.dto;
+package com.maksymchernenko.cinebook.dto.movie;
 
 import com.maksymchernenko.cinebook.model.Movie;
 import jakarta.validation.constraints.*;

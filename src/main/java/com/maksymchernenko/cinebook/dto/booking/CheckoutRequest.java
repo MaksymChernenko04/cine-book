@@ -1,4 +1,4 @@
-package com.maksymchernenko.cinebook.dto;
+package com.maksymchernenko.cinebook.dto.booking;
 
 import com.maksymchernenko.cinebook.model.Payment;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package com.maksymchernenko.cinebook.dto;
+package com.maksymchernenko.cinebook.dto.seat;
 
 import com.maksymchernenko.cinebook.model.Seat;
 import jakarta.validation.constraints.Min;

@@ -1,4 +1,4 @@
-package com.maksymchernenko.cinebook.dto;
+package com.maksymchernenko.cinebook.dto.hall;
 
 import com.maksymchernenko.cinebook.model.Hall;
 import jakarta.validation.constraints.Min;

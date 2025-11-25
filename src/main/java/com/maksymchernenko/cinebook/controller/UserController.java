@@ -1,7 +1,7 @@
 package com.maksymchernenko.cinebook.controller;
 
-import com.maksymchernenko.cinebook.dto.UserRequest;
-import com.maksymchernenko.cinebook.dto.UserResponse;
+import com.maksymchernenko.cinebook.dto.user.UserRequest;
+import com.maksymchernenko.cinebook.dto.user.UserResponse;
 import com.maksymchernenko.cinebook.model.User;
 import com.maksymchernenko.cinebook.service.UserService;
 import jakarta.validation.Valid;

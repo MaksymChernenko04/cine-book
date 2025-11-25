@@ -1,7 +1,7 @@
 package com.maksymchernenko.cinebook.controller;
 
-import com.maksymchernenko.cinebook.dto.SeatRequest;
-import com.maksymchernenko.cinebook.dto.SeatResponse;
+import com.maksymchernenko.cinebook.dto.seat.SeatRequest;
+import com.maksymchernenko.cinebook.dto.seat.SeatResponse;
 import com.maksymchernenko.cinebook.model.Hall;
 import com.maksymchernenko.cinebook.model.Seat;
 import com.maksymchernenko.cinebook.service.ScreeningService;

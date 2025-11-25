@@ -1,4 +1,4 @@
-package com.maksymchernenko.cinebook.dto;
+package com.maksymchernenko.cinebook.dto.screening;
 
 import com.maksymchernenko.cinebook.model.Hall;
 import com.maksymchernenko.cinebook.model.Movie;

@@ -1,8 +1,8 @@
 package com.maksymchernenko.cinebook.controller;
 
-import com.maksymchernenko.cinebook.dto.AddSeatRequest;
-import com.maksymchernenko.cinebook.dto.HallRequest;
-import com.maksymchernenko.cinebook.dto.HallResponse;
+import com.maksymchernenko.cinebook.dto.seat.AddSeatRequest;
+import com.maksymchernenko.cinebook.dto.hall.HallRequest;
+import com.maksymchernenko.cinebook.dto.hall.HallResponse;
 import com.maksymchernenko.cinebook.model.Hall;
 import com.maksymchernenko.cinebook.service.ScreeningService;
 import jakarta.validation.Valid;

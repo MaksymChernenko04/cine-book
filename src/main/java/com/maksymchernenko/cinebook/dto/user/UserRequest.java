@@ -1,4 +1,4 @@
-package com.maksymchernenko.cinebook.dto;
+package com.maksymchernenko.cinebook.dto.user;
 
 import com.maksymchernenko.cinebook.model.User;
 import jakarta.validation.constraints.NotBlank;

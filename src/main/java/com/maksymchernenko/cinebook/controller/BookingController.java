@@ -1,8 +1,8 @@
 package com.maksymchernenko.cinebook.controller;
 
-import com.maksymchernenko.cinebook.dto.BookingRequest;
-import com.maksymchernenko.cinebook.dto.BookingResponse;
-import com.maksymchernenko.cinebook.dto.CheckoutRequest;
+import com.maksymchernenko.cinebook.dto.booking.BookingRequest;
+import com.maksymchernenko.cinebook.dto.booking.BookingResponse;
+import com.maksymchernenko.cinebook.dto.booking.CheckoutRequest;
 import com.maksymchernenko.cinebook.model.Booking;
 import com.maksymchernenko.cinebook.service.BookingService;
 import jakarta.validation.Valid;

@@ -1,7 +1,7 @@
 package com.maksymchernenko.cinebook.controller;
 
-import com.maksymchernenko.cinebook.dto.MovieRequest;
-import com.maksymchernenko.cinebook.dto.MovieResponse;
+import com.maksymchernenko.cinebook.dto.movie.MovieRequest;
+import com.maksymchernenko.cinebook.dto.movie.MovieResponse;
 import com.maksymchernenko.cinebook.model.Movie;
 import com.maksymchernenko.cinebook.service.MovieService;
 import jakarta.validation.Valid;

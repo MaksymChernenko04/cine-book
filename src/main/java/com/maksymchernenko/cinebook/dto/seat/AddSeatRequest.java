@@ -1,4 +1,4 @@
-package com.maksymchernenko.cinebook.dto;
+package com.maksymchernenko.cinebook.dto.seat;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

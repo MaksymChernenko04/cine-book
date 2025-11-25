@@ -1,7 +1,7 @@
 package com.maksymchernenko.cinebook.controller;
 
-import com.maksymchernenko.cinebook.dto.ScreeningRequest;
-import com.maksymchernenko.cinebook.dto.ScreeningResponse;
+import com.maksymchernenko.cinebook.dto.screening.ScreeningRequest;
+import com.maksymchernenko.cinebook.dto.screening.ScreeningResponse;
 import com.maksymchernenko.cinebook.model.Screening;
 import com.maksymchernenko.cinebook.service.ScreeningService;
 import jakarta.validation.Valid;

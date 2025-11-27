@@ -1,4 +1,4 @@
-package com.maksymchernenko.cinebook.model;
+package com.maksymchernenko.movieservice.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

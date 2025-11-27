@@ -1,6 +1,6 @@
-package com.maksymchernenko.cinebook.service;
+package com.maksymchernenko.movieservice.service;
 
-import com.maksymchernenko.cinebook.model.Movie;
+import com.maksymchernenko.movieservice.model.Movie;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

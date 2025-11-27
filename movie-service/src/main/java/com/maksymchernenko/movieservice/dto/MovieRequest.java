@@ -1,6 +1,6 @@
-package com.maksymchernenko.cinebook.dto.movie;
+package com.maksymchernenko.movieservice.dto;
 
-import com.maksymchernenko.cinebook.model.Movie;
+import com.maksymchernenko.movieservice.model.Movie;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

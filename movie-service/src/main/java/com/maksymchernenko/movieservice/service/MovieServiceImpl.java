@@ -1,9 +1,8 @@
-package com.maksymchernenko.cinebook.service.impl;
+package com.maksymchernenko.movieservice.service;
 
-import com.maksymchernenko.cinebook.exception.NotFoundException;
-import com.maksymchernenko.cinebook.model.Movie;
-import com.maksymchernenko.cinebook.repository.MovieRepository;
-import com.maksymchernenko.cinebook.service.MovieService;
+import com.maksymchernenko.movieservice.exception.NotFoundException;
+import com.maksymchernenko.movieservice.model.Movie;
+import com.maksymchernenko.movieservice.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

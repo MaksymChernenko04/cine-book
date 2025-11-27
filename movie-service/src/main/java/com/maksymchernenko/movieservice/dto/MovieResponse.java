@@ -1,7 +1,7 @@
-package com.maksymchernenko.cinebook.dto.movie;
+package com.maksymchernenko.movieservice.dto;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.maksymchernenko.cinebook.model.Movie;
+import com.maksymchernenko.movieservice.model.Movie;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -1,9 +1,9 @@
-package com.maksymchernenko.cinebook.controller;
+package com.maksymchernenko.movieservice.controller;
 
-import com.maksymchernenko.cinebook.dto.movie.MovieRequest;
-import com.maksymchernenko.cinebook.dto.movie.MovieResponse;
-import com.maksymchernenko.cinebook.model.Movie;
-import com.maksymchernenko.cinebook.service.MovieService;
+import com.maksymchernenko.movieservice.dto.MovieRequest;
+import com.maksymchernenko.movieservice.dto.MovieResponse;
+import com.maksymchernenko.movieservice.model.Movie;
+import com.maksymchernenko.movieservice.service.MovieService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

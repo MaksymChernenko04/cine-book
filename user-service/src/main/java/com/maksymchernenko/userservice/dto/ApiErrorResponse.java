@@ -1,4 +1,4 @@
-package com.maksymchernenko.cinebook.dto;
+package com.maksymchernenko.userservice.dto;
 
 import java.time.OffsetDateTime;
 import java.util.List;

@@ -1,7 +1,7 @@
-package com.maksymchernenko.cinebook.controller;
+package com.maksymchernenko.userservice.controller;
 
-import com.maksymchernenko.cinebook.dto.ApiErrorResponse;
-import com.maksymchernenko.cinebook.exception.NotFoundException;
+import com.maksymchernenko.userservice.dto.ApiErrorResponse;
+import com.maksymchernenko.userservice.exception.NotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

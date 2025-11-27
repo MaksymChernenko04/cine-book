@@ -1,6 +1,6 @@
-package com.maksymchernenko.cinebook.service;
+package com.maksymchernenko.userservice.service;
 
-import com.maksymchernenko.cinebook.model.User;
+import com.maksymchernenko.userservice.model.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

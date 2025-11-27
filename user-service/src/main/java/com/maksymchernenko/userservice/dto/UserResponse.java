@@ -1,7 +1,7 @@
-package com.maksymchernenko.cinebook.dto.user;
+package com.maksymchernenko.userservice.dto;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.maksymchernenko.cinebook.model.User;
+import com.maksymchernenko.userservice.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

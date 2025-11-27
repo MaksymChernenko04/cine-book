@@ -1,9 +1,9 @@
-package com.maksymchernenko.cinebook.controller;
+package com.maksymchernenko.userservice.controller;
 
-import com.maksymchernenko.cinebook.dto.user.UserRequest;
-import com.maksymchernenko.cinebook.dto.user.UserResponse;
-import com.maksymchernenko.cinebook.model.User;
-import com.maksymchernenko.cinebook.service.UserService;
+import com.maksymchernenko.userservice.dto.UserRequest;
+import com.maksymchernenko.userservice.dto.UserResponse;
+import com.maksymchernenko.userservice.model.User;
+import com.maksymchernenko.userservice.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -59,7 +59,6 @@ public class UserController {
         return ResponseEntity.ok(UserResponse.fromEntity(saved));
     }
 
-    // DELETE /api/users/{id}
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Integer id) {
         userService.deleteUserById(id);

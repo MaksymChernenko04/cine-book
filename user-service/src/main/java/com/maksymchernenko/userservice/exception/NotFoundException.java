@@ -1,4 +1,4 @@
-package com.maksymchernenko.cinebook.exception;
+package com.maksymchernenko.userservice.exception;
 
 public class NotFoundException extends RuntimeException {
     public NotFoundException(String message) {

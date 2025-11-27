@@ -1,6 +1,6 @@
-package com.maksymchernenko.cinebook.dto.user;
+package com.maksymchernenko.userservice.dto;
 
-import com.maksymchernenko.cinebook.model.User;
+import com.maksymchernenko.userservice.model.User;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;

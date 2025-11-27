@@ -1,9 +1,8 @@
-package com.maksymchernenko.cinebook.service.impl;
+package com.maksymchernenko.userservice.service;
 
-import com.maksymchernenko.cinebook.exception.NotFoundException;
-import com.maksymchernenko.cinebook.model.User;
-import com.maksymchernenko.cinebook.repository.UserRepository;
-import com.maksymchernenko.cinebook.service.UserService;
+import com.maksymchernenko.userservice.exception.NotFoundException;
+import com.maksymchernenko.userservice.model.User;
+import com.maksymchernenko.userservice.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -42,7 +41,6 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public User updateUser(User user) {
-        // ensure exists
         Integer id = user.getId();
         if (id == null) {
             throw new IllegalArgumentException("User id must be provided for update");

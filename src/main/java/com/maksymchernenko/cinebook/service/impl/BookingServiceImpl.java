@@ -3,10 +3,10 @@ package com.maksymchernenko.cinebook.service.impl;
 import com.maksymchernenko.cinebook.exception.NotFoundException;
 import com.maksymchernenko.cinebook.model.*;
 import com.maksymchernenko.cinebook.repository.BookingRepository;
-import com.maksymchernenko.cinebook.repository.UserRepository;
 import com.maksymchernenko.cinebook.service.BookingService;
 import com.maksymchernenko.cinebook.service.PaymentService;
 import com.maksymchernenko.cinebook.service.ScreeningService;
+import com.maksymchernenko.cinebook.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -20,21 +20,21 @@ import java.util.List;
 public class BookingServiceImpl implements BookingService {
 
     private final BookingRepository bookingRepository;
-    private final UserRepository userRepository;
 
     private final ScreeningService screeningService;
     private final PaymentService paymentService;
+    private final UserService userService;
 
     @Autowired
     public BookingServiceImpl(BookingRepository bookingRepository,
-                              UserRepository userRepository,
                               ScreeningService screeningService,
-                              PaymentService paymentService) {
+                              PaymentService paymentService,
+                              UserService userService) {
         this.bookingRepository = bookingRepository;
-        this.userRepository = userRepository;
 
         this.screeningService = screeningService;
         this.paymentService = paymentService;
+        this.userService = userService;
     }
 
     @Override
@@ -56,8 +56,7 @@ public class BookingServiceImpl implements BookingService {
     @Transactional
     @Override
     public Booking createBooking(Integer userId, Integer screeningId, List<Integer> seatIds) {
-        User user = userRepository.findById(userId)
-                .orElseThrow(() -> new NotFoundException(String.format("User with id = %d not found", userId)));
+        User user = userService.getUserById(userId);
         Screening screening = screeningService.getScreeningById(screeningId);
 
         String lockToken = screeningService.lockSeats(screeningId, seatIds);

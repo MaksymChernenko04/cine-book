@@ -1,9 +1,10 @@
-package com.maksymchernenko.cinebook.service;
+package com.maksymchernenko.paymentservice.service;
 
-import com.maksymchernenko.cinebook.model.Payment;
+import com.maksymchernenko.paymentservice.model.Payment;
 import org.springframework.transaction.annotation.Transactional;
 
 public interface PaymentService {
+
     Payment getPaymentById(Integer id);
 
     @Transactional

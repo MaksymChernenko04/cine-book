@@ -1,9 +1,8 @@
-package com.maksymchernenko.cinebook.service.impl;
+package com.maksymchernenko.paymentservice.service;
 
-import com.maksymchernenko.cinebook.exception.NotFoundException;
-import com.maksymchernenko.cinebook.model.Payment;
-import com.maksymchernenko.cinebook.repository.PaymentRepository;
-import com.maksymchernenko.cinebook.service.PaymentService;
+import com.maksymchernenko.paymentservice.exception.NotFoundException;
+import com.maksymchernenko.paymentservice.model.Payment;
+import com.maksymchernenko.paymentservice.repository.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

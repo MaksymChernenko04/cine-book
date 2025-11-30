@@ -1,4 +1,4 @@
-package com.maksymchernenko.cinebook.model;
+package com.maksymchernenko.paymentservice.model;
 
 import jakarta.persistence.*;
 import lombok.*;

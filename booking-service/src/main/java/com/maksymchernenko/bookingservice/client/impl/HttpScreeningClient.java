@@ -4,7 +4,6 @@ import com.maksymchernenko.bookingservice.client.ScreeningClient;
 import com.maksymchernenko.bookingservice.client.dto.screening.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;

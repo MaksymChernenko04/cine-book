@@ -1,8 +1,6 @@
 package com.maksymchernenko.bookingservice.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.util.List;

@@ -28,11 +28,11 @@ public class ScreeningController {
 
     @GetMapping
     public Page<ScreeningResponse> getAllScreenings(Pageable pageable,
-                                                    @RequestParam(required = false) Integer screeningId,
+                                                    @RequestParam(required = false) Integer movieId,
                                                     @RequestParam(required = false) LocalDate date) {
         Page<Screening> page;
-        if (screeningId != null && date != null) {
-            page = screeningService.getScreeningsByMovieAndDate(screeningId, date, pageable);
+        if (movieId != null && date != null) {
+            page = screeningService.getScreeningsByMovieAndDate(movieId, date, pageable);
         } else {
             page = screeningService.getAllScreenings(pageable);
         }

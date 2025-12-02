@@ -5,7 +5,10 @@ import com.maksymchernenko.movieservice.dto.MovieResponse;
 import com.maksymchernenko.movieservice.model.Movie;
 import com.maksymchernenko.movieservice.service.MovieService;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -38,8 +41,14 @@ public class MovieController {
         return page.map(MovieResponse::fromEntity);
     }
 
+    private static final Logger log = LoggerFactory.getLogger(MovieController.class);
+
+    @Value("${server.port}")
+    private String port;
+
     @GetMapping("/{id}")
     public MovieResponse getMovieById(@PathVariable Integer id) {
+        log.info("Handling getMovieById({}) on movie-service instance port={}", id, port);
         return MovieResponse.fromEntity(movieService.getMovieById(id));
     }
 

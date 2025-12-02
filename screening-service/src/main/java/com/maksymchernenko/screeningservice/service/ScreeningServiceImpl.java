@@ -57,7 +57,8 @@ public class ScreeningServiceImpl implements ScreeningService {
     public Page<Screening> getScreeningsByMovieAndDate(Integer movieId, LocalDate date, Pageable pageable) {
         MovieDTO movie = movieClient.getMovieById(movieId);
 
-        return screeningRepository.findScreeningsByMovieIdAndStartTime_Date(movie.getId(), date, pageable);
+        return screeningRepository.findScreeningsByMovieIdAndStartTimeBetween(
+                movie.getId(), date.atStartOfDay(), date.plusDays(1).atStartOfDay(), pageable);
     }
 
     @Override
